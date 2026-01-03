@@ -1,1 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compétences – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Compétences</h1>
+      <p class="muted">Organisation par grandes familles + liens vers des preuves (projets/stages).</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Concevoir</h3>
+        <p class="muted">Analyse besoin, choix solutions, schémas, architecture.</p>
+      </div>
+      <div class="card">
+        <h3>Vérifier / Tester</h3>
+        <p class="muted">Mesures, procédures de test, validation, debug.</p>
+      </div>
+      <div class="card">
+        <h3>Maintenir</h3>
+        <p class="muted">Diagnostic, réparation, traçabilité, SAV.</p>
+      </div>
+      <div class="card">
+        <h3>Implanter / Développer</h3>
+        <p class="muted">C embarqué, drivers, RTOS, intégration.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
