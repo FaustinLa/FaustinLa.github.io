@@ -1,1 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Contact</h1>
+      <p class="muted">Remplace avec tes vrais liens.</p>
+
+      <div class="btn-row">
+        <a class="btn primary" href="mailto:ton.email@email.com">📧 Email</a>
+        <a class="btn" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">🐙 GitHub</a>
+        <!-- Optionnel -->
+        <!-- <a class="btn" href="https://www.linkedin.com/in/tonprofil/" target="_blank" rel="noreferrer">💼 LinkedIn</a> -->
+      </div>
+
+      <p class="small" style="margin-top:10px;">
+        Si tu veux ajouter ton CV : mets un fichier PDF dans /assets/ puis fais un lien vers /assets/cv.pdf
+      </p>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
