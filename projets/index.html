@@ -1,1 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projets – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container">
+    <div class="card">
+      <h1>Projets</h1>
+      <p class="muted">Choisis une catégorie. Les projets sont classés par année (BUT1/BUT2/BUT3) + projets personnels.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="/projets/but1/">BUT1</a>
+        <a class="btn primary" href="/projets/but2/">BUT2</a>
+        <a class="btn primary" href="/projets/but3/">BUT3</a>
+        <a class="btn" href="/projets/perso/">Perso</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Comment lire un projet ?</h2>
+      <p class="muted">
+        Chaque projet a une page détail : contexte, objectif, ce que j’ai fait, résultats (photos/schémas), compétences.
+      </p>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
