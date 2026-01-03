@@ -1,1 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projets BUT3 – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Projets – BUT3</h1>
+      <p class="muted">Liste des projets universitaires réalisés en BUT3.</p>
+      <div class="btn-row">
+        <a class="btn" href="/projets/">← Retour hub</a>
+        <a class="btn" href="/projets/but1/">BUT1</a>
+        <a class="btn" href="/projets/but3/">BUT2</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="/projets/but2/projet-exemple-but2/">
+        <h3>Projet exemple BUT3</h3>
+        <p class="muted">2–3 lignes : objectif + techno + résultat.</p>
+        <div class="tagrow">
+          <span class="tag">FreeRTOS</span><span class="tag">STM32</span><span class="tag">PWM</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
