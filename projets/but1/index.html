@@ -1,1 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projets BUT1 – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Projets – BUT1</h1>
+      <p class="muted">Liste des projets universitaires réalisés en BUT1 (SAÉ/TP/projets).</p>
+      <div class="btn-row">
+        <a class="btn" href="/projets/">← Retour hub</a>
+        <a class="btn" href="/projets/but2/">Aller à BUT2 →</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Carte projet 1 -->
+      <a class="card" href="/projets/but1/projet-exemple-but1/">
+        <h3>Projet exemple BUT1</h3>
+        <p class="muted">2–3 lignes : objectif + contexte (SAÉ/TP) + techno.</p>
+        <div class="tagrow">
+          <span class="tag">STM32</span><span class="tag">C</span><span class="tag">UART</span>
+        </div>
+      </a>
+
+      <!-- Duplique cette carte pour tes autres projets BUT1 -->
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
