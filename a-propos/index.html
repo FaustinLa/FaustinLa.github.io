@@ -1,1 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>À propos – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>À propos</h1>
+      <p class="muted">Quelques infos rapides : profil, parcours, objectifs.</p>
+    </div>
+
+    <div class="card">
+      <h2>Profil</h2>
+      <p>Étudiant en DUT/BUT GEII, orienté électronique et systèmes embarqués.</p>
+      <p class="muted">Tu peux ajouter : ce que tu aimes (projets concrets, debug, mesures...), ton objectif.</p>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
