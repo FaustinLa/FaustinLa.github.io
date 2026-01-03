@@ -5,381 +5,61 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio – Faustin Larose</title>
   <meta name="description" content="Portfolio DUT/BUT GEII – Électronique & Systèmes Embarqués" />
-
-  <style>
-    :root{
-      --bg:#0b1020;
-      --card:#111a33;
-      --text:#eaf0ff;
-      --muted:#a9b7df;
-      --accent:#7c5cff;
-      --accent2:#2dd4bf;
-      --border:rgba(255,255,255,.08);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1040px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 500px at 20% 0%, rgba(124,92,255,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(45,212,191,.22), transparent 55%),
-        linear-gradient(180deg, var(--bg), #070a14 70%);
-      min-height:100vh;
-    }
-    a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding: 18px 18px 60px;}
-    /* Topbar */
-    .topbar{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(7,10,20,.55);
-      border-bottom: 1px solid var(--border);
-    }
-    .topbar-inner{
-      max-width:var(--max); margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 10px 18px;
-    }
-    .brand{display:flex; gap:10px; align-items:center; text-decoration:none}
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 18px rgba(124,92,255,.45);
-    }
-    .brand span{font-weight:750; letter-spacing:.2px}
-    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:600;
-      padding:8px 10px;
-      border-radius: 12px;
-      transition: .15s;
-    }
-    nav a:hover{color:var(--text); background: rgba(255,255,255,.06)}
-    /* Hero */
-    .hero{padding: 34px 0 18px;}
-    .hero-grid{
-      display:grid; gap:16px;
-      grid-template-columns: 1.4fr .6fr;
-    }
-    @media (max-width: 860px){
-      .hero-grid{grid-template-columns:1fr;}
-      nav{gap:8px}
-    }
-    .card{
-      background: rgba(17,26,51,.75);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 18px;
-    }
-    .hero h1{
-      margin:0 0 6px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height:1.05;
-      letter-spacing:-.8px;
-    }
-    .subtitle{color:var(--muted); margin:0 0 14px; font-size: 15.5px}
-    .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      border: 1px solid var(--border);
-      padding: 8px 10px;
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.04);
-      font-weight:650;
-      font-size: 13px;
-    }
-    .pill b{color:var(--text)}
-    .btn-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      font-weight:750;
-      color: var(--text);
-      transition: .15s;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,191,.85));
-      border: 0;
-      color: #081026;
-    }
-    /* Sections */
-    section{margin-top: 16px}
-    .section-title{
-      display:flex; align-items:center; justify-content:space-between;
-      margin: 0 0 10px;
-    }
-    .section-title h2{margin:0; font-size: 18px; letter-spacing:.2px}
-    .section-title p{margin:0; color:var(--muted); font-size:13px}
-    .grid-3{
-      display:grid; gap:12px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: 980px){ .grid-3{grid-template-columns: 1fr 1fr;} }
-    @media (max-width: 640px){ .grid-3{grid-template-columns: 1fr;} }
-    .proj h3{margin: 0 0 6px; font-size: 16px}
-    .meta{color:var(--muted); font-size: 13px; margin: 0 0 10px; line-height:1.35}
-    .tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:10px}
-    .tag{
-      font-size: 12px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-weight:650;
-    }
-    .tag.accent{color:#dfe7ff; border-color: rgba(124,92,255,.35); background: rgba(124,92,255,.12)}
-    .tag.mint{color:#c7fff6; border-color: rgba(45,212,191,.35); background: rgba(45,212,191,.10)}
-    /* Timeline */
-    .timeline{display:grid; gap:12px}
-    .item{
-      display:grid; gap:10px;
-      grid-template-columns: 140px 1fr;
-      align-items:start;
-    }
-    @media (max-width: 640px){ .item{grid-template-columns: 1fr;} }
-    .when{color:var(--muted); font-weight:750; font-size: 13px}
-    .item h3{margin:0 0 6px; font-size: 16px}
-    .item .meta{margin:0}
-    /* Footer */
-    footer{
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align:center;
-      opacity:.9;
-    }
-    .small{font-size: 12px; color: var(--muted)}
-  </style>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#top">
-        <span class="dot"></span>
-        <span>Portfolio</span>
-      </a>
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
       <nav>
-        <a href="#projets">Projets</a>
-        <a href="#stages">Stages</a>
-        <a href="#competences">Compétences</a>
-        <a href="#contact">Contact</a>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top" class="container">
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-grid">
-        <div class="card">
-          <h1>Faustin Larose</h1>
-          <p class="subtitle">
-            Étudiant <b>DUT/BUT GEII</b> – spécialité <b>Électronique & Systèmes Embarqués</b>.
-            Je présente ici mes projets, stages et compétences.
-          </p>
+  <main class="container">
+    <div class="card">
+      <h1>Faustin Larose</h1>
+      <p class="muted"><b>DUT/BUT GEII</b> – Électronique & Systèmes Embarqués</p>
+      <p>
+        Bienvenue sur mon portfolio. Ici je présente mes projets techniques, mes stages,
+        et les compétences développées pendant la formation.
+      </p>
 
-          <div class="pill-row">
-            <span class="pill">🔧 <b>STM32</b> · C · CubeIDE</span>
-            <span class="pill">⏱️ <b>FreeRTOS</b> · drivers · debug</span>
-            <span class="pill">📡 UART · I2C · PWM</span>
-          </div>
-
-          <div class="btn-row">
-            <a class="btn primary" href="#projets">Voir mes projets</a>
-            <!-- Remplace par ton CV si tu veux (PDF dans le repo) -->
-            <a class="btn" href="#contact">Me contacter</a>
-          </div>
-
-          <p class="small" style="margin-top:12px;">
-            Objectif : stage / alternance / poursuite en école d’ingénieur (embarqué/électronique).
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="section-title">
-            <h2>À propos</h2>
-            <p>résumé</p>
-          </div>
-          <p class="meta">
-            J’aime les projets concrets : acquisition capteurs, communication série, mise au point à l’oscillo,
-            et intégration logicielle (C embarqué, RTOS). Je privilégie l’électronique plutôt que l’IT pure.
-          </p>
-          <div class="tags">
-            <span class="tag accent">C embarqué</span>
-            <span class="tag">Debug</span>
-            <span class="tag mint">Systèmes</span>
-            <span class="tag">Doc technique</span>
-          </div>
-        </div>
+      <div class="tagrow">
+        <span class="tag">STM32</span>
+        <span class="tag">C embarqué</span>
+        <span class="tag">FreeRTOS</span>
+        <span class="tag">UART / I2C / PWM</span>
+        <span class="tag">Debug & mesures</span>
       </div>
+
+      <div class="btn-row">
+        <a class="btn primary" href="/projets/">Voir les projets</a>
+        <a class="btn" href="/stages/">Voir les stages</a>
+      </div>
+
+      <p class="small" style="margin-top:10px;">
+        Astuce : commence par “Projets”, puis ouvre un projet pour voir la page détail (contexte, objectifs, résultats).
+      </p>
     </div>
 
-    <!-- PROJETS -->
-    <section id="projets">
-      <div class="section-title">
-        <h2>Projets</h2>
-        <p>sélection</p>
+    <div class="card">
+      <h2>Projets à la une</h2>
+      <p class="muted">Tu peux mettre ici 2–3 projets “phare” (liens directs).</p>
+      <div class="btn-row">
+        <!-- Remplace les liens quand tu auras créé tes pages projet -->
+        <a class="btn" href="/projets/but2/projet-exemple-but2/">Exemple projet BUT2</a>
+        <a class="btn" href="/projets/perso/projet-exemple-perso/">Exemple projet perso</a>
       </div>
-
-      <div class="grid-3">
-        <article class="card proj">
-          <h3>Contrôle moteurs & PWM (STM32)</h3>
-          <p class="meta">
-            Mise en place de PWM (timers), réglages fréquence/rapport cyclique, tests et validation.
-          </p>
-          <div class="tags">
-            <span class="tag accent">STM32</span>
-            <span class="tag">PWM</span>
-            <span class="tag">Timers</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <h3>FreeRTOS – tâches & synchronisation</h3>
-          <p class="meta">
-            Architecture multitâche : queues, sémaphores, notifications, chronos/événements.
-          </p>
-          <div class="tags">
-            <span class="tag mint">FreeRTOS</span>
-            <span class="tag">Queues</span>
-            <span class="tag">ISR</span>
-          </div>
-        </article>
-
-        <article class="card proj">
-          <h3>Communication série & trames</h3>
-          <p class="meta">
-            UART, trames structurées, debug sur terminal, tests d’intégrité et robustesse.
-          </p>
-          <div class="tags">
-            <span class="tag">UART</span>
-            <span class="tag">Protocol</span>
-            <span class="tag accent">C</span>
-          </div>
-        </article>
-      </div>
-
-      <p class="small" style="margin-top:10px; opacity:.95;">
-        👉 Remplace ces cartes par tes vrais projets (titre, 2–3 lignes, technologies).
-      </p>
-    </section>
-
-    <!-- STAGES -->
-    <section id="stages">
-      <div class="section-title">
-        <h2>Stages</h2>
-        <p>expérience</p>
-      </div>
-
-      <div class="card">
-        <div class="timeline">
-          <div class="item">
-            <div class="when">2025 · 8 semaines</div>
-            <div>
-              <h3>Stage – Maintenance / SAV électronique</h3>
-              <p class="meta">
-                Diagnostic, tests, remise en état, traçabilité. (À compléter : entreprise, missions clés, résultats)
-              </p>
-              <div class="tags">
-                <span class="tag">Tests</span>
-                <span class="tag">Mesures</span>
-                <span class="tag">Rapport</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ajoute d’autres items si besoin -->
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPÉTENCES -->
-    <section id="competences">
-      <div class="section-title">
-        <h2>Compétences</h2>
-        <p>tech</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3 style="margin:0 0 8px;">Embarqué</h3>
-          <div class="tags">
-            <span class="tag accent">C</span>
-            <span class="tag">STM32CubeIDE</span>
-            <span class="tag">HAL</span>
-            <span class="tag mint">FreeRTOS</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px;">Interfaces</h3>
-          <div class="tags">
-            <span class="tag">UART</span>
-            <span class="tag">I2C</span>
-            <span class="tag">SPI</span>
-            <span class="tag">PWM</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px;">Électronique</h3>
-          <div class="tags">
-            <span class="tag">Analogique</span>
-            <span class="tag">Numérique</span>
-            <span class="tag">Oscilloscope</span>
-            <span class="tag">Multimètre</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>liens</p>
-      </div>
-
-      <div class="card">
-        <p class="meta" style="margin:0 0 10px;">
-          Tu peux me contacter ou consulter mes dépôts.
-        </p>
-        <div class="btn-row">
-          <a class="btn primary" href="mailto:ton.email@email.com">📧 Email</a>
-          <a class="btn" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">🐙 GitHub</a>
-          <!-- Optionnel: LinkedIn -->
-          <!-- <a class="btn" href="https://www.linkedin.com/in/tonprofil/" target="_blank" rel="noreferrer">💼 LinkedIn</a> -->
-        </div>
-        <p class="small" style="margin-top:10px;">
-          Remplace “ton.email@email.com” et “tonpseudo”.
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Faustin Larose — Portfolio DUT/BUT GEII
-    </footer>
+    </div>
   </main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
-  <link rel="stylesheet" href="/css/style.css">
 </html>
