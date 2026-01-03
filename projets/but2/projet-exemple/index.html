@@ -1,1 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projet exemple BUT2 – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+      <nav>
+        <a href="/projets/">Projets</a>
+        <a href="/stages/">Stages</a>
+        <a href="/competences/">Compétences</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Projet exemple BUT2</h1>
+      <p class="muted">Contexte : SAÉ/TP – année BUT2 – thème rapide</p>
+      <div class="btn-row">
+        <a class="btn" href="/projets/but2/">← Retour liste BUT2</a>
+        <a class="btn" href="/projets/">Hub projets</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Objectif</h2>
+      <p>Explique en 3–5 lignes ce que le projet devait accomplir.</p>
+    </div>
+
+    <div class="card">
+      <h2>Technos & matériel</h2>
+      <div class="tagrow">
+        <span class="tag">STM32</span>
+        <span class="tag">C</span>
+        <span class="tag">STM32CubeIDE</span>
+        <span class="tag">UART / I2C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Ce que j’ai fait</h2>
+      <ul>
+        <li>Point 1 (ex : configuration timers / UART / GPIO)</li>
+        <li>Point 2 (ex : écriture driver / gestion trame)</li>
+        <li>Point 3 (ex : tests, debug, validation)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Résultats</h2>
+      <p>Ajoute des preuves : photos, schémas, capture terminal, mesures à l’oscillo.</p>
+      <!-- Exemple image (quand tu auras mis un fichier dans assets/images) -->
+      <!-- <img src="/assets/images/mon-projet.jpg" alt="Photo projet" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.10)"> -->
+    </div>
+
+    <div class="card">
+      <h2>Compétences mobilisées</h2>
+      <p class="muted">Lien vers la page compétences + mention des items concernés.</p>
+      <div class="btn-row">
+        <a class="btn" href="/competences/">Voir les compétences</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© <span id="y"></span> Faustin Larose</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
