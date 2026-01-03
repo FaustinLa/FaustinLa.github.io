@@ -5,59 +5,118 @@
   --muted:#a9b7df;
   --accent:#7c5cff;
   --accent2:#2dd4bf;
-  --border:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.10);
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --radius: 18px;
   --max: 1040px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: system-ui, Arial, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--text);
-  background: linear-gradient(180deg, var(--bg), #070a14 70%);
+  background:
+    radial-gradient(1000px 500px at 20% 0%, rgba(124,92,255,.35), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(45,212,191,.20), transparent 55%),
+    linear-gradient(180deg, var(--bg), #070a14 70%);
+  min-height:100vh;
 }
 a{color:inherit;text-decoration:none}
-.container{max-width:var(--max);margin:auto;padding:24px}
+.container{max-width:var(--max);margin:0 auto;padding:18px 18px 60px;}
+
 .topbar{
-  position:sticky;top:0;z-index:10;
+  position:sticky; top:0; z-index:10;
   backdrop-filter: blur(10px);
-  background: rgba(7,10,20,.6);
-  border-bottom:1px solid var(--border);
+  background: rgba(7,10,20,.60);
+  border-bottom: 1px solid var(--border);
 }
 .topbar-inner{
-  max-width:var(--max);
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 24px;
+  max-width:var(--max); margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 10px 18px;
+  gap:12px;
 }
-.brand{display:flex;gap:10px;align-items:center;font-weight:800}
+.brand{display:flex; gap:10px; align-items:center; font-weight:850; letter-spacing:.2px}
 .dot{
-  width:10px;height:10px;border-radius:50%;
-  background: linear-gradient(135deg,var(--accent),var(--accent2));
+  width:10px; height:10px; border-radius:50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 18px rgba(124,92,255,.45);
 }
-nav{display:flex;gap:14px}
+nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
 nav a{
   color:var(--muted);
-  font-weight:600;
+  font-weight:650;
   padding:8px 10px;
-  border-radius:12px;
+  border-radius: 12px;
+  transition: .15s;
 }
-nav a:hover{background:rgba(255,255,255,.08);color:var(--text)}
+nav a:hover{color:var(--text); background: rgba(255,255,255,.06)}
+
 .card{
-  background: rgba(17,26,51,.75);
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  border-radius:var(--radius);
-  padding:18px;
-  margin-bottom:16px;
+  background: rgba(17,26,51,.78);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 18px;
 }
-h1{margin-top:0}
+.card + .card{margin-top:12px}
+
+h1{margin:0 0 8px; font-size: clamp(26px, 4vw, 40px); letter-spacing:-.6px}
+h2{margin:0 0 8px; font-size: 18px}
+h3{margin:0 0 6px; font-size: 16px}
+p{margin:0 0 10px; line-height:1.5}
+.muted{color:var(--muted)}
+.small{font-size: 12.5px; color: var(--muted)}
+
+.grid{
+  display:grid; gap:12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 980px){ .grid{grid-template-columns: 1fr 1fr;} }
+@media (max-width: 640px){ .grid{grid-template-columns: 1fr;} }
+
+.btn-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.05);
+  font-weight:800;
+  transition:.15s;
+}
+.btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+.btn.primary{
+  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,191,.85));
+  border: 0;
+  color:#081026;
+}
+
+.tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.tag{
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  font-weight:700;
+}
+
+.list{display:grid; gap:12px}
+.item{
+  display:grid; gap:10px;
+  grid-template-columns: 140px 1fr;
+  align-items:start;
+}
+@media (max-width: 640px){ .item{grid-template-columns: 1fr;} }
+.when{color:var(--muted); font-weight:850; font-size:13px}
+
 footer{
+  margin-top: 22px;
   text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  margin:40px 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  opacity:.9;
 }
