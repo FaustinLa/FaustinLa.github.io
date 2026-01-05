@@ -135,24 +135,37 @@ p{margin:0 0 10px;line-height:1.55}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:10px 14px;
+  padding:10px 16px;
   border-radius:14px;
   border:1px solid var(--border);
   background:#ffffff;
   font-weight:700;
   color:var(--accent);
-  transition:.15s;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease;
 }
 
 .btn:hover{
-  background:rgba(37,99,235,.08);
-  transform:translateY(-1px);
+  background:rgba(29,78,216,.08);
+  transform:translateY(-2px);
+  box-shadow: 0 8px 20px rgba(29,78,216,.20);
+}
+
+.btn:active{
+  transform:translateY(0);
+  box-shadow: 0 4px 10px rgba(29,78,216,.18);
 }
 
 .btn.primary{
   background:linear-gradient(135deg, var(--accent), var(--accent2));
   border:0;
   color:white;
+}
+
+.btn.primary:hover{
+  box-shadow: 0 10px 26px rgba(29,78,216,.35);
 }
 
 /* TAGS */
