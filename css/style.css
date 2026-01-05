@@ -227,3 +227,47 @@ footer{
   color:var(--muted);
   font-size:13px;
 }
+
+/* ====== WOW PACK ====== */
+
+/* 1) Lien actif dans le menu */
+nav a.active{
+  color: var(--accent);
+  background: rgba(29,78,216,.10);
+}
+
+/* 2) Badges "BUT1 / BUT2 / BUT3 / Perso" */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  font-weight:800;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background: rgba(29,78,216,.08);
+  color: var(--accent);
+}
+
+.badge.perso{
+  background: rgba(14,165,233,.10);
+  color: #075985;
+  border-color: rgba(14,165,233,.18);
+}
+
+.badge.but1{ background: rgba(29,78,216,.08); }
+.badge.but2{ background: rgba(29,78,216,.12); }
+.badge.but3{ background: rgba(29,78,216,.16); }
+
+/* 3) Animation d’apparition des cartes au scroll */
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .35s ease, transform .35s ease;
+  will-change: opacity, transform;
+}
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
