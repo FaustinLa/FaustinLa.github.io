@@ -96,14 +96,19 @@ nav a:hover::after{
 
 /* CARDS */
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  border-radius:var(--radius);
-  padding:18px;
+  position:relative;
 }
 
-.card + .card{margin-top:14px}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:var(--radius);
+  background:linear-gradient(120deg,
+    rgba(29,78,216,.06),
+    transparent 40%);
+  pointer-events:none;
+}
 
 /* TEXT */
 h1{
