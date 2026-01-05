@@ -7,6 +7,30 @@
   <meta name="description" content="Portfolio DUT/BUT GEII – Électronique & Systèmes Embarqués" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
+  <script>
+  // 1) Mettre "active" sur le lien du menu correspondant à la page
+  (function(){
+    const path = location.pathname;
+    document.querySelectorAll('nav a').forEach(a => {
+      const href = a.getAttribute('href');
+      // active si le chemin commence par le href (sauf "/")
+      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
+      if (href === '/' && path === '/') a.classList.add('active');
+    });
+  })();
+
+  // 2) Animation d’apparition au scroll
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+  })();
+  </script>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
