@@ -1,1 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projets personnels – Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+    <nav>
+      <a href="/projets/">Projets</a>
+      <a href="/stages/">Stages</a>
+      <a href="/competences/">Compétences</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Projets personnels</h1>
+    <p class="muted">Projets hors IUT (curiosité, auto-formation, réalisations perso).</p>
+    <div class="btn-row">
+      <a class="btn" href="/projets/">← Retour hub</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    <a class="card card-link" href="/projets/perso/projet-exemple-perso/">
+      <h3>Projet perso – Exemple</h3>
+      <span class="badge">Perso</span>
+      <p class="muted">Décris le but du projet et ce que tu as appris (2–3 lignes).</p>
+      <div class="tagrow"><span class="tag">Électronique</span><span class="tag">Linux</span><span class="tag">DIY</span></div>
+    </a>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> Faustin Larose</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
