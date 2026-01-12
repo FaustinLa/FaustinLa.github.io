@@ -6,64 +6,39 @@
   <title>Contact – Portfolio</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+    <nav>
+      <a href="/projets/">Projets</a>
+      <a href="/stages/">Stages</a>
+      <a href="/competences/">Compétences</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Contact</h1>
+    <p class="muted">Remplace avec tes vrais liens.</p>
+
+    <div class="btn-row">
+      <a class="btn primary" href="mailto:ton.email@email.com">📧 Email</a>
+      <a class="btn" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">🐙 GitHub</a>
+      <!-- Optionnel -->
+      <!-- <a class="btn" href="https://www.linkedin.com/in/tonprofil/" target="_blank" rel="noreferrer">💼 LinkedIn</a> -->
     </div>
-  </header>
 
-  <main class="container">
-    <div class="card">
-      <h1>Contact</h1>
-      <p class="muted">Remplace avec tes vrais liens.</p>
+    <p class="small" style="margin-top:10px;">
+      Si tu veux ajouter ton CV : mets <b>cv.pdf</b> dans <b>/assets/</b> et fais un lien vers <b>/assets/cv.pdf</b>.
+    </p>
+  </div>
+</main>
 
-      <div class="btn-row">
-        <a class="btn primary" href="mailto:ton.email@email.com">📧 Email</a>
-        <a class="btn" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <!-- Optionnel -->
-        <!-- <a class="btn" href="https://www.linkedin.com/in/tonprofil/" target="_blank" rel="noreferrer">💼 LinkedIn</a> -->
-      </div>
-
-      <p class="small" style="margin-top:10px;">
-        Si tu veux ajouter ton CV : mets un fichier PDF dans /assets/ puis fais un lien vers /assets/cv.pdf
-      </p>
-    </div>
-  </main>
-
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer>© <span id="y"></span> Faustin Larose</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
