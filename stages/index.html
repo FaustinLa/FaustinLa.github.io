@@ -6,66 +6,36 @@
   <title>Stages – Portfolio</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+    <nav>
+      <a href="/projets/">Projets</a>
+      <a href="/stages/">Stages</a>
+      <a href="/competences/">Compétences</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
-    <div class="card">
-      <h1>Stages</h1>
-      <p class="muted">Mes expériences en entreprise (missions, compétences, résultats).</p>
-    </div>
+<main class="container">
+  <div class="card">
+    <h1>Stages</h1>
+    <p class="muted">Mes expériences en entreprise : missions, résultats, compétences.</p>
+  </div>
 
-    <div class="card">
-      <div class="item">
-        <div class="when">2025</div>
-        <div>
-          <h3>Stage – (Nom entreprise)</h3>
-          <p class="muted">2–3 lignes : secteur + missions principales.</p>
-          <div class="btn-row">
-            <a class="btn" href="/stages/entreprise-exemple/">Voir le détail</a>
-          </div>
-        </div>
-      </div>
+  <div class="card card-link" style="display:block" onclick="location.href='/stages/entreprise-exemple/'">
+    <h3>Stage – Entreprise (à compléter)</h3>
+    <p class="muted">Maintenance / SAV électronique, diagnostic, tests, remise en état, traçabilité.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="/stages/entreprise-exemple/">Voir le détail</a>
     </div>
-  </main>
+  </div>
+</main>
 
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer>© <span id="y"></span> Faustin Larose</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
