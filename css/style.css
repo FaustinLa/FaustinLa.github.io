@@ -217,3 +217,55 @@ footer{margin-top:30px; text-align:center; color:var(--muted); font-size:13px}
     0 2px 6px rgba(15,23,42,.08),
     0 16px 40px rgba(29,78,216,.16);
 }
+
+/* ====== Cartes dépliables (accordion) ====== */
+details.card{
+  padding: 0;               /* on gère le padding à l'intérieur */
+  overflow: hidden;
+}
+
+details.card > summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+details.card > summary::-webkit-details-marker{
+  display: none;
+}
+
+/* petite flèche */
+details.card > summary .chev{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(29,78,216,.75);
+  border-bottom: 2px solid rgba(29,78,216,.75);
+  transform: rotate(45deg);
+  transition: transform .18s ease;
+  margin-left: 10px;
+}
+
+details.card[open] > summary .chev{
+  transform: rotate(225deg);
+}
+
+details.card .content{
+  padding: 0 20px 18px;
+  color: var(--muted);
+  line-height: 1.6;
+  border-top: 1px solid rgba(29,78,216,.12);
+}
+
+/* animation d'ouverture */
+details.card .content{
+  animation: fadeIn .18s ease;
+}
+@keyframes fadeIn{
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
