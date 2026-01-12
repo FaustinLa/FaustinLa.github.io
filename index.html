@@ -7,30 +7,7 @@
   <meta name="description" content="Portfolio DUT/BUT GEII – Électronique & Systèmes Embarqués" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
 
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
@@ -46,39 +23,81 @@
   </header>
 
   <main class="container">
-    <div class="card">
-      <h1>Faustin Larose</h1>
-      <p class="muted"><b>DUT/BUT GEII</b> – Électronique & Systèmes Embarqués</p>
-      <p>
-        Bienvenue sur mon portfolio. Ici je présente mes projets techniques, mes stages,
-        et les compétences développées pendant la formation.
-      </p>
+    <div class="stack">
+      <!-- HERO -->
+      <div class="card">
+        <h1>Faustin Larose</h1>
+        <p class="muted"><b>DUT/BUT GEII</b> – Électronique & Systèmes Embarqués</p>
+        <p>
+          Bienvenue sur mon portfolio. Je présente ici mes projets techniques, mes stages,
+          et les compétences développées durant la formation.
+        </p>
 
-      <div class="tagrow">
-        <span class="tag">STM32</span>
-        <span class="tag">C embarqué</span>
-        <span class="tag">FreeRTOS</span>
-        <span class="tag">UART / I2C / PWM</span>
-        <span class="tag">Debug & mesures</span>
+        <div class="tagrow">
+          <span class="tag">STM32</span>
+          <span class="tag">C embarqué</span>
+          <span class="tag">FreeRTOS</span>
+          <span class="tag">UART / I2C / PWM</span>
+          <span class="tag">Debug & mesures</span>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="/projets/">Voir mes projets</a>
+          <a class="btn" href="/stages/">Voir mes stages</a>
+          <a class="btn" href="/competences/">Compétences</a>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          Conseil : commence par <b>Projets</b>, puis ouvre une page détail pour voir contexte, objectifs, résultats et preuves.
+        </p>
       </div>
 
-      <div class="btn-row">
-        <a class="btn primary" href="/projets/">Voir les projets</a>
-        <a class="btn" href="/stages/">Voir les stages</a>
+      <!-- PROJETS PHARES -->
+      <div class="card">
+        <h2>À la une</h2>
+        <p class="muted">Quelques liens rapides (mets tes vrais projets ici quand tu les auras créés).</p>
+
+        <div class="btn-row">
+          <a class="btn" href="/projets/but2/projet-exemple-but2/">Projet BUT2 (exemple)</a>
+          <a class="btn" href="/projets/perso/projet-exemple-perso/">Projet perso (exemple)</a>
+          <a class="btn" href="/projets/">Tous les projets</a>
+        </div>
       </div>
 
-      <p class="small" style="margin-top:10px;">
-        Astuce : commence par “Projets”, puis ouvre un projet pour voir la page détail (contexte, objectifs, résultats).
-      </p>
-    </div>
+      <!-- CARTE DÉPLIABLE (LONG TEXTE) -->
+      <details class="card">
+        <summary>
+          <span>Présentation détaillée (cliquer pour déplier)</span>
+          <span class="chev"></span>
+        </summary>
+        <div class="content">
+          <p>
+            Je suis étudiant en DUT/BUT GEII avec une spécialisation orientée électronique et systèmes embarqués.
+            J’apprécie particulièrement les projets concrets où je peux concevoir, implémenter puis valider une solution :
+            configuration microcontrôleur, communication série, intégration capteurs, et mise au point.
+          </p>
+          <p>
+            Dans ce portfolio, j’essaie de présenter des preuves : schémas, photos, captures, mesures, et ce que j’ai réellement fait.
+          </p>
+          <ul>
+            <li><b>Ce que j’aime :</b> debug, mesures (oscillo), intégration, performance/robustesse</li>
+            <li><b>Outils :</b> STM32CubeIDE, C embarqué, FreeRTOS, documentation technique</li>
+            <li><b>Objectif :</b> stage / alternance / poursuite en électronique embarquée</li>
+          </ul>
+        </div>
+      </details>
 
-    <div class="card">
-      <h2>Projets à la une</h2>
-      <p class="muted">Tu peux mettre ici 2–3 projets “phare” (liens directs).</p>
-      <div class="btn-row">
-        <!-- Remplace les liens quand tu auras créé tes pages projet -->
-        <a class="btn" href="/projets/but2/projet-exemple-but2/">Exemple projet BUT2</a>
-        <a class="btn" href="/projets/perso/projet-exemple-perso/">Exemple projet perso</a>
+      <!-- ACCÈS RAPIDES -->
+      <div class="card">
+        <h2>Accès rapides</h2>
+        <p class="muted">Pages du site (structure).</p>
+        <div class="btn-row">
+          <a class="btn" href="/projets/">Projets (BUT1/BUT2/BUT3/Perso)</a>
+          <a class="btn" href="/stages/">Stages</a>
+          <a class="btn" href="/competences/">Compétences</a>
+          <a class="btn" href="/a-propos/">À propos</a>
+          <a class="btn" href="/contact/">Contact</a>
+        </div>
       </div>
     </div>
   </main>
