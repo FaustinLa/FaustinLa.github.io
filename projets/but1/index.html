@@ -6,70 +6,43 @@
   <title>Projets BUT1 – Portfolio</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+    <nav>
+      <a href="/projets/">Projets</a>
+      <a href="/stages/">Stages</a>
+      <a href="/competences/">Compétences</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Projets – BUT1</h1>
+    <p class="muted">Projets universitaires réalisés en BUT1 (SAÉ / TP). Clique sur une carte pour voir le détail.</p>
+    <div class="btn-row">
+      <a class="btn" href="/projets/">← Retour hub</a>
+      <a class="btn" href="/projets/but2/">Aller à BUT2 →</a>
     </div>
-  </header>
+  </div>
 
-  <main class="container">
-    <div class="card">
-      <h1>Projets – BUT1</h1>
-      <p class="muted">Liste des projets universitaires réalisés en BUT1 (SAÉ/TP/projets).</p>
-      <div class="btn-row">
-        <a class="btn" href="/projets/">← Retour hub</a>
-        <a class="btn" href="/projets/but2/">Aller à BUT2 →</a>
-      </div>
-    </div>
+  <div class="grid">
+    <a class="card card-link" href="/projets/but1/projet-exemple-but1/">
+      <h3>Projet exemple BUT1</h3>
+      <span class="badge">BUT1</span>
+      <p class="muted">Objectif + techno + résultat (2–3 lignes).</p>
+      <div class="tagrow"><span class="tag">Électronique</span><span class="tag">C</span><span class="tag">Mesures</span></div>
+    </a>
 
-    <div class="grid">
-      <!-- Carte projet 1 -->
-      <a class="card" href="/projets/but1/projet-exemple-but1/">
-        <h3>Projet exemple BUT1</h3>
-        <p class="muted">2–3 lignes : objectif + contexte (SAÉ/TP) + techno.</p>
-        <div class="tagrow">
-          <span class="tag">STM32</span><span class="tag">C</span><span class="tag">UART</span>
-        </div>
-      </a>
+    <!-- Duplique cette carte pour tes autres projets BUT1 -->
+  </div>
+</main>
 
-      <!-- Duplique cette carte pour tes autres projets BUT1 -->
-    </div>
-  </main>
-
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer>© <span id="y"></span> Faustin Larose</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
