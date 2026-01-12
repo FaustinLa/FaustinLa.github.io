@@ -6,72 +6,62 @@
   <title>Compétences – Portfolio</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
+    <nav>
+      <a href="/projets/">Projets</a>
+      <a href="/stages/">Stages</a>
+      <a href="/competences/">Compétences</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
+<main class="container">
+  <div class="card">
+    <h1>Compétences</h1>
+    <p class="muted">Organisation en 4 familles + preuves (liens vers des projets/stages).</p>
+  </div>
+
+  <div class="grid">
     <div class="card">
-      <h1>Compétences</h1>
-      <p class="muted">Organisation par grandes familles + liens vers des preuves (projets/stages).</p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Concevoir</h3>
-        <p class="muted">Analyse besoin, choix solutions, schémas, architecture.</p>
-      </div>
-      <div class="card">
-        <h3>Vérifier / Tester</h3>
-        <p class="muted">Mesures, procédures de test, validation, debug.</p>
-      </div>
-      <div class="card">
-        <h3>Maintenir</h3>
-        <p class="muted">Diagnostic, réparation, traçabilité, SAV.</p>
-      </div>
-      <div class="card">
-        <h3>Implanter / Développer</h3>
-        <p class="muted">C embarqué, drivers, RTOS, intégration.</p>
+      <h3>Concevoir</h3>
+      <p class="muted">Analyse du besoin, architecture, schémas, choix techniques.</p>
+      <div class="btn-row">
+        <a class="btn" href="/projets/">Preuves dans mes projets</a>
       </div>
     </div>
-  </main>
 
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <div class="card">
+      <h3>Vérifier / Tester</h3>
+      <p class="muted">Mesures, procédures de test, validation, debug.</p>
+      <div class="btn-row">
+        <a class="btn" href="/stages/">Preuves en stage</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Maintenir</h3>
+      <p class="muted">Diagnostic, réparation, traçabilité, SAV.</p>
+      <div class="btn-row">
+        <a class="btn" href="/stages/">Missions de maintenance</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Implanter / Développer</h3>
+      <p class="muted">C embarqué, drivers, RTOS, intégration.</p>
+      <div class="btn-row">
+        <a class="btn" href="/projets/but2/">Exemples BUT2</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> Faustin Larose</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
