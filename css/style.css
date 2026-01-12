@@ -194,3 +194,14 @@ p{margin:0 0 10px; line-height:1.55}
 .reveal.show{opacity:1; transform: translateY(0)}
 
 footer{margin-top:30px; text-align:center; color:var(--muted); font-size:13px}
+
+/* Plus d'air entre les cartes */
+.stack{
+  display: grid;
+  gap: 18px;           /* augmente si tu veux (22px par ex) */
+}
+
+/* Pour les pages où tu as .grid (cartes projets), un peu plus d’espace aussi */
+.grid{
+  gap: 18px;           /* ou 20px */
+}
