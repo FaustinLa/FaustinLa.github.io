@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sud Communication - Faustin Larose</title>
+    <meta name="description" content="Découvrez Sud Communication, spécialiste en radiocommunications maritimes, où Faustin Larose a effectué son stage de BUT2.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- HERO BANNER -->
+            <div class="etab-hero reveal">
+                <img src="../assets/images/etablissements/sud_communication.png" alt="Sud Communication">
+                <div class="etab-hero-overlay">
+                    <p>Entreprise d'Accueil · Stage BUT2</p>
+                    <h1>Sud Communication</h1>
+                </div>
+            </div>
+
+            <!-- CONTENT GRID -->
+            <div class="etab-info-grid reveal">
+                
+                <!-- Left Details -->
+                <div class="detail-content">
+                    <h2>Présentation de l'entreprise</h2>
+                    <p>Fondée en <strong>1998</strong> à Mauguio (Hérault), la société <strong>Sud Communication</strong> est une entreprise hautement spécialisée dans le domaine de la radiocommunication professionnelle et des technologies d'électronique embarquée de navigation.</p>
+                    <p>Elle fournit des solutions complètes de communication maritime, terrestre et aéronautique, incluant la vente, l'installation, le service après-vente (SAV), le dépannage métrologique et la formation. Sud Communication collabore étroitement avec des leaders mondiaux comme Icom, Motorola et Kenwood, équipant aussi bien des navires de commerce, des bateaux de plaisance que des réseaux de communication industriels terrestres.</p>
+
+                    <h3 class="mt-8">Mon rôle et mes réalisations</h3>
+                    <p>J'ai intégré le service technique de Sud Communication lors de mon stage de fin de deuxième année de BUT (BUT2) :</p>
+                    <ul>
+                        <li><strong>Maintenance et Diagnostic de Radios :</strong> Prise en charge des radios VHF maritimes (ex: Icom IC-M35) et portatifs professionnels. Analyse et réparation au niveau des circuits de modulation et des étages d'amplification RF.</li>
+                        <li><strong>Tests Métrologiques :</strong> Mesure de la puissance d'émission (en Watts) et du taux d'ondes stationnaires (TOS) via des wattmètres/ROS-mètres (type Surecom SW-102) pour valider la conformité des antennes et des émetteurs.</li>
+                        <li><strong>Programmation et Configuration :</strong> Programmation logicielle de fréquences privées et de canaux d'urgence sur les terminaux radio selon la réglementation de l'ANFR.</li>
+                    </ul>
+                    <p>Cette expérience immersive m'a permis d'appliquer mes connaissances théoriques en électronique analogique, traitement RF, antennes et propagation d'ondes, tout en me familiarisant avec le secteur de la maintenance électronique industrielle.</p>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="etab-sidebar-card">
+                    <h3>Fiche d'identité</h3>
+                    <ul class="etab-meta-list">
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Création</span>
+                            <span class="etab-meta-value">1998</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Secteur</span>
+                            <span class="etab-meta-value">Radiocommunications</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Adresse</span>
+                            <span class="etab-meta-value">317 Rue St-Exupéry, Mauguio</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Marques Clés</span>
+                            <span class="etab-meta-value">Icom, Motorola, Kenwood</span>
+                        </li>
+                        <li class="etab-meta-item" style="padding-top: 16px;">
+                            <a href="http://sudcom.info" target="_blank" class="btn btn-primary" style="width: 100%; font-size: var(--text-xs); padding: 8px 0;">Site Officiel &nearrow;</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="text-center mt-8 reveal">
+                <a href="../index.html" class="btn btn-secondary">&larr; Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </header>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

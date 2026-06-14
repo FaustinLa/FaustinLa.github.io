@@ -1,108 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio – Faustin Larose</title>
-  <meta name="description" content="Portfolio DUT/BUT GEII – Électronique & Systèmes Embarqués" />
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faustin Larose - Portfolio GEII ESE</title>
+    <meta name="description" content="Portfolio de Faustin Larose, étudiant en BUT3 GEII parcours Électronique et Systèmes Embarqués.">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="stack">
-      <!-- HERO -->
-      <div class="card">
-        <h1>Faustin Larose</h1>
-        <p class="muted"><b>DUT/BUT GEII</b> – Électronique & Systèmes Embarqués</p>
-        <p>
-          Bienvenue sur mon portfolio. Je présente ici mes projets techniques, mes stages,
-          et les compétences développées durant la formation.
-        </p>
-
-        <div class="tagrow">
-          <span class="tag">STM32</span>
-          <span class="tag">C embarqué</span>
-          <span class="tag">FreeRTOS</span>
-          <span class="tag">UART / I2C / PWM</span>
-          <span class="tag">Debug & mesures</span>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="projets/index.html" class="nav-link">Projets</a>
+                <a href="stages/index.html" class="nav-link">Stages</a>
+                <a href="competences/index.html" class="nav-link">Compétences</a>
+                <a href="a-propos/index.html" class="nav-link">À propos</a>
+                <a href="cv/index.html" class="nav-link">CV</a>
+                <a href="contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
         </div>
+    </header>
 
-        <div class="btn-row">
-          <a class="btn primary" href="/projets/">Voir mes projets</a>
-          <a class="btn" href="/stages/">Voir mes stages</a>
-          <a class="btn" href="/competences/">Compétences</a>
+    <main>
+        <div class="container">
+            <!-- HERO SECTION -->
+            <section class="hero reveal">
+                <div class="hero-content">
+                    <p class="hero-subtitle">BUT3 GEII · Électronique & Systèmes Embarqués · Double diplôme IAE Montpellier</p>
+                    <h1>Faustin Larose</h1>
+                    <p>Je conçois des systèmes performants où le matériel et le logiciel se rejoignent, de la conception PCB à l'implémentation bas niveau et aux interfaces haut niveau.</p>
+                    <div class="hero-actions">
+                        <a href="projets/index.html" class="btn btn-primary">Voir mes projets</a>
+                        <!-- TODO: Replace placeholder link with actual PDF when added to assets -->
+                        <a href="assets/cv/cv-faustin-larose.pdf" class="btn btn-secondary" target="_blank" download="cv-faustin-larose.pdf">Télécharger mon CV</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <!-- TODO: Add your photo in assets/images/photo-profil.jpg -->
+                    <img src="assets/images/photo-profil.jpg" alt="Faustin Larose" class="hero-image" onerror="this.src='https://placehold.co/400x400/1D4ED8/FFFFFF?text=FL'">
+                </div>
+            </section>
+
+            <!-- PRÉSENTATION DÉTAILLÉE (ACCORDÉON DE L'ANCIEN SITE) -->
+            <details class="card reveal" style="margin-top: 24px;">
+                <summary>
+                    <span>Présentation détaillée (cliquer pour déplier)</span>
+                    <span class="chev"></span>
+                </summary>
+                <div class="content">
+                    <p>Je suis étudiant en DUT/BUT GEII avec une spécialisation orientée électronique et systèmes embarqués. J’apprécie particulièrement les projets concrets où je peux concevoir, implémenter puis valider une solution : configuration microcontrôleur, communication série, intégration capteurs, et mise au point.</p>
+                    <p>Dans ce portfolio, j’essaie de présenter des preuves : schémas, photos, captures, mesures, et ce que j’ai réellement fait.</p>
+                    <ul style="padding-left: 20px; color: var(--text-secondary);">
+                        <li style="margin-bottom: 8px;"><b>Ce que j’aime :</b> debug, mesures (oscillo), intégration, performance/robustesse</li>
+                        <li style="margin-bottom: 8px;"><b>Outils :</b> STM32CubeIDE, C embarqué, FreeRTOS, documentation technique</li>
+                        <li style="margin-bottom: 8px;"><b>Objectif :</b> stage / alternance / poursuite en électronique embarquée</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+                <div class="pcb-dot pcb-dot-2"></div>
+                <div class="pcb-dot pcb-dot-3"></div>
+            </div>
+
+            <!-- MON PARCOURS & ÉTABLISSEMENTS -->
+            <section class="section reveal">
+                <h2>Mon Parcours & Établissements</h2>
+                <p>Découvrez les différents établissements d'enseignement et entreprises au sein desquels j'ai été formé et où j'ai pu réaliser mes projets et stages. Cliquez sur un établissement pour en savoir plus.</p>
+                <div class="grid grid-2 mt-8">
+                    <a href="etablissements/lycee-champollion.html" class="card-link">
+                        <div class="card-highlight">
+                            <h3 class="mb-2">Lycée Jean-François Champollion</h3>
+                            <p class="hero-subtitle mb-4">Lattes · Baccalauréat Général</p>
+                            <p>Enseignement secondaire scientifique (Mathématiques, Physique-Chimie) avec section européenne espagnole.</p>
+                            <span style="font-weight: 500; font-size: var(--text-sm); margin-top: auto; color: var(--accent-color);">Me découvrir &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="etablissements/iut-montpellier.html" class="card-link">
+                        <div class="card-highlight">
+                            <h3 class="mb-2">IUT de Montpellier-Sète</h3>
+                            <p class="hero-subtitle mb-4">Montpellier · BUT GEII & ESE</p>
+                            <p>Formation en Génie Électrique & Informatique Industrielle, spécialisation Électronique et Systèmes Embarqués, et double diplôme IAE.</p>
+                            <span style="font-weight: 500; font-size: var(--text-sm); margin-top: auto; color: var(--accent-color);">Me découvrir &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="etablissements/sud-communication.html" class="card-link">
+                        <div class="card-highlight">
+                            <h3 class="mb-2">Sud Communication</h3>
+                            <p class="hero-subtitle mb-4">Mauguio · Stage BUT2</p>
+                            <p>Entreprise spécialisée dans les radiocommunications maritimes et professionnelles, et les équipements de navigation.</p>
+                            <span style="font-weight: 500; font-size: var(--text-sm); margin-top: auto; color: var(--accent-color);">Me découvrir &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="etablissements/capelec.html" class="card-link">
+                        <div class="card-highlight">
+                            <h3 class="mb-2">Capelec</h3>
+                            <p class="hero-subtitle mb-4">Montpellier · Stage BUT3</p>
+                            <p>Constructeur d'équipements de contrôle technique et de métrologie, où j'ai développé l'outil de diagnostic automobile CAP4350.</p>
+                            <span style="font-weight: 500; font-size: var(--text-sm); margin-top: auto; color: var(--accent-color);">Me découvrir &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+            </div>
+
+            <!-- DERNIERS PROJETS -->
+            <section class="section reveal">
+                <h2>Derniers projets</h2>
+                <div class="grid grid-3 mt-8">
+                    <a href="projets/but3/cap4350/index.html" class="card-link">
+                        <article class="card">
+                            <h3>CAP4350 (Capelec)</h3>
+                            <p>Développement Qt/C++ d'un logiciel de diagnostic automobile OBD-II / UDS. Parsing de trames CAN et implémentation protocoles complexes.</p>
+                            <div class="tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Qt 5</span>
+                                <span class="tag">CAN Bus</span>
+                                <span class="tag">OBD-II</span>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="projets/but3/sae-iot/index.html" class="card-link">
+                        <article class="card">
+                            <h3>SAE IoT S6</h3>
+                            <p>Système IoT complet avec IHM de configuration, gateway MQTT sur STM32 (FreeRTOS/lwIP) et serveur sécurisé AES-128.</p>
+                            <div class="tags">
+                                <span class="tag">STM32</span>
+                                <span class="tag">FreeRTOS</span>
+                                <span class="tag">MQTT</span>
+                                <span class="tag">C</span>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="projets/perso/montage-pc/index.html" class="card-link">
+                        <article class="card">
+                            <h3>Montage PC Custom</h3>
+                            <p>Construction d'une machine de A à Z : choix justifiés des composants, optimisation thermique, cable management et configuration BIOS/UEFI.</p>
+                            <div class="tags">
+                                <span class="tag">Hardware</span>
+                                <span class="tag">Thermals</span>
+                                <span class="tag">Optimisation</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+            </div>
+
+            <!-- COMPÉTENCES CLÉS -->
+            <section class="section reveal">
+                <h2>Compétences clés</h2>
+                <div class="tags mt-4" style="font-size: var(--text-sm);">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Qt 5</span>
+                    <span class="tag">FreeRTOS</span>
+                    <span class="tag">STM32</span>
+                    <span class="tag">UART/I2C/SPI</span>
+                    <span class="tag">CAN Bus</span>
+                    <span class="tag">OBD-II</span>
+                    <span class="tag">UDS ISO 14229</span>
+                    <span class="tag">KiCad</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Home Assistant</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">HTML/CSS/JS</span>
+                    <span class="tag">MQTT</span>
+                    <span class="tag">AES-128</span>
+                </div>
+            </section>
+
+            <!-- À PROPOS RAPIDE -->
+            <section class="section reveal text-center" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h2>À propos</h2>
+                <p>Passionné par le développement d'infrastructures bas niveau et les systèmes distribués. Mon approche est rigoureuse : je privilégie toujours l'optimisation, la robustesse du code et la propreté de l'architecture matérielle.</p>
+                <a href="a-propos/index.html" class="btn btn-secondary mt-4">En savoir plus sur moi</a>
+            </section>
+
         </div>
+    </main>
 
-        <p class="small" style="margin-top:10px;">
-          Conseil : commence par <b>Projets</b>, puis ouvre une page détail pour voir contexte, objectifs, résultats et preuves.
-        </p>
-      </div>
-
-      <!-- PROJETS PHARES -->
-      <div class="card">
-        <h2>À la une</h2>
-        <p class="muted">Quelques liens rapides (mets tes vrais projets ici quand tu les auras créés).</p>
-
-        <div class="btn-row">
-          <a class="btn" href="/projets/but2/projet-exemple-but2/">Projet BUT2 (exemple)</a>
-          <a class="btn" href="/projets/perso/projet-exemple-perso/">Projet perso (exemple)</a>
-          <a class="btn" href="/projets/">Tous les projets</a>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
         </div>
-      </div>
+    </footer>
 
-      <!-- CARTE DÉPLIABLE (LONG TEXTE) -->
-      <details class="card">
-        <summary>
-          <span>Présentation détaillée (cliquer pour déplier)</span>
-          <span class="chev"></span>
-        </summary>
-        <div class="content">
-          <p>
-            Je suis étudiant en DUT/BUT GEII avec une spécialisation orientée électronique et systèmes embarqués.
-            J’apprécie particulièrement les projets concrets où je peux concevoir, implémenter puis valider une solution :
-            configuration microcontrôleur, communication série, intégration capteurs, et mise au point.
-          </p>
-          <p>
-            Dans ce portfolio, j’essaie de présenter des preuves : schémas, photos, captures, mesures, et ce que j’ai réellement fait.
-          </p>
-          <ul>
-            <li><b>Ce que j’aime :</b> debug, mesures (oscillo), intégration, performance/robustesse</li>
-            <li><b>Outils :</b> STM32CubeIDE, C embarqué, FreeRTOS, documentation technique</li>
-            <li><b>Objectif :</b> stage / alternance / poursuite en électronique embarquée</li>
-          </ul>
-        </div>
-      </details>
-
-      <!-- ACCÈS RAPIDES -->
-      <div class="card">
-        <h2>Accès rapides</h2>
-        <p class="muted">Pages du site (structure).</p>
-        <div class="btn-row">
-          <a class="btn" href="/projets/">Projets (BUT1/BUT2/BUT3/Perso)</a>
-          <a class="btn" href="/stages/">Stages</a>
-          <a class="btn" href="/competences/">Compétences</a>
-          <a class="btn" href="/a-propos/">À propos</a>
-          <a class="btn" href="/contact/">Contact</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script src="scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

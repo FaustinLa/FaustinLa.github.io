@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capelec - Faustin Larose</title>
+    <meta name="description" content="Découvrez Capelec, constructeur d'équipements de contrôle technique automobile, où Faustin Larose a effectué son stage BUT3.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- HERO BANNER (CAROUSEL DYNAMIQUE AUTOMATIQUE) -->
+            <div class="etab-hero reveal" style="padding: 0; position: relative;">
+                <div class="carousel" style="margin: 0; height: 100%; border: none; border-radius: 0;">
+                    <div class="carousel-track-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="../assets/images/etablissements/capelec_building.png" alt="Capelec - Bâtiment de l'entreprise" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../assets/images/etablissements/capelec_logo.png" alt="Capelec - Logo Officiel" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; padding: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Précédent" style="background: rgba(15, 15, 14, 0.4); border: none;">&larr;</button>
+                    <button class="carousel-btn next" aria-label="Suivant" style="background: rgba(15, 15, 14, 0.4); border: none;">&rarr;</button>
+                    <div class="carousel-nav">
+                        <span class="carousel-indicator active"></span>
+                        <span class="carousel-indicator"></span>
+                    </div>
+                </div>
+                <div class="etab-hero-overlay" style="z-index: 5; pointer-events: none;">
+                    <p>Entreprise d'Accueil · Stage BUT3</p>
+                    <h1>Capelec</h1>
+                </div>
+            </div>
+
+            <!-- CONTENT GRID -->
+            <div class="etab-info-grid reveal">
+                
+                <!-- Left Details -->
+                <div class="detail-content">
+                    <h2>Présentation de l'entreprise</h2>
+                    <p>Créée en <strong>1991</strong> et implantée au cœur du parc d'activités Eureka à Montpellier, <strong>Capelec</strong> est une entreprise industrielle française de premier plan, spécialisée dans la conception, le développement logiciel et la fabrication d'équipements de mesure et de métrologie avancée.</p>
+                    <p>Capelec conçoit des stations de diagnostic antipollution, des opacimètres, des réglophares haute précision et des analyseurs de gaz destinés aux centres de contrôle technique automobile et aux réseaux de réparation dans le monde entier. L'entreprise est fortement axée sur l'export, exportant sa technologie de pointe dans plus de 50 pays.</p>
+
+                    <h3 class="mt-8">Mon rôle et mes réalisations</h3>
+                    <p>Dans le cadre de mon projet et stage de fin d'études en BUT3 (Génie Électrique et Informatique Industrielle), j'ai intégré le pôle R&D Logiciel de Capelec :</p>
+                    <ul>
+                        <li><strong>Développement Qt5 / C++ :</strong> Intégration de nouvelles briques fonctionnelles au logiciel de la station de diagnostic antipollution CAP4350. Refonte ergonomique de l'interface utilisateur pour intégrer un arbre dynamique multi-niveaux d'analyse (utilisation de <code>QTreeWidget</code> via la classe <code>AffichageArbre</code>).</li>
+                        <li><strong>Protocoles Diagnostic Réseau CAN :</strong> Implémentation bas niveau et parsing de trames des protocoles standardisés OBD-II (SAE J1979) et UDS (ISO 14229) pour le dialogue en temps réel avec les calculateurs embarqués (ECU) du véhicule.</li>
+                        <li><strong>Gestion de trames complexes :</strong> Développement de scripts de maintien de session diagnostic active (mécanisme TesterPresent <code>3E 80</code> cadencé toutes les 2 secondes) et parsing des codes défauts (DTC, SID 0x59).</li>
+                    </ul>
+                    <p>Cette mission m'a offert une immersion complète dans le développement de logiciels industriels embarqués complexes et m'a permis d'approfondir mes compétences en C++, en architecture réseau multiplexée (bus CAN) et en gestion de version logicielle (Git).</p>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="etab-sidebar-card">
+                    <h3>Fiche d'identité</h3>
+                    <ul class="etab-meta-list">
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Création</span>
+                            <span class="etab-meta-value">1er Avril 1991</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Secteur</span>
+                            <span class="etab-meta-value">Métrologie Automobile</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Siège Social</span>
+                            <span class="etab-meta-value">Montpellier (Eureka)</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Spécialité</span>
+                            <span class="etab-meta-value">Bancs de test & OBD</span>
+                        </li>
+                        <li class="etab-meta-item" style="padding-top: 16px;">
+                            <a href="https://www.capelec.com" target="_blank" class="btn btn-primary" style="width: 100%; font-size: var(--text-xs); padding: 8px 0;">Site Officiel &nearrow;</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="text-center mt-8 reveal">
+                <a href="../index.html" class="btn btn-secondary">&larr; Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </header>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUT de Montpellier-Sète - Faustin Larose</title>
+    <meta name="description" content="Présentation de l'IUT de Montpellier-Sète, où Faustin Larose a suivi sa formation en BUT GEII parcours ESE.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- HERO BANNER (CAROUSEL DYNAMIQUE AUTOMATIQUE) -->
+            <div class="etab-hero reveal" style="padding: 0; position: relative;">
+                <div class="carousel" style="margin: 0; height: 100%; border: none; border-radius: 0;">
+                    <div class="carousel-track-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="../assets/images/etablissements/iut_sign.jpg" alt="IUT de Montpellier - Entrée Enseigne" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../assets/images/etablissements/iut_entrance.jpg" alt="IUT de Montpellier - Bâtiment Administratif" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../assets/images/etablissements/iut_campus.jpg" alt="IUT de Montpellier - Campus" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../assets/images/etablissements/iut_logo.png" alt="IUT de Montpellier - Logo Officiel" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; padding: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Précédent" style="background: rgba(15, 15, 14, 0.4); border: none;">&larr;</button>
+                    <button class="carousel-btn next" aria-label="Suivant" style="background: rgba(15, 15, 14, 0.4); border: none;">&rarr;</button>
+                    <div class="carousel-nav">
+                        <span class="carousel-indicator active"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                    </div>
+                </div>
+                <div class="etab-hero-overlay" style="z-index: 5; pointer-events: none;">
+                    <p>Enseignement Supérieur</p>
+                    <h1>IUT de Montpellier-Sète</h1>
+                </div>
+            </div>
+
+            <!-- CONTENT GRID -->
+            <div class="etab-info-grid reveal">
+                
+                <!-- Left Details -->
+                <div class="detail-content">
+                    <h2>Présentation de l'établissement</h2>
+                    <p>Créé en <strong>1966</strong> par décret ministériel, l'IUT de Montpellier-Sète fait partie de la première génération historique d'IUT mis en œuvre en France. Implanté au nord de Montpellier sur un campus de près de 10 hectares depuis 1973, il accueille plus de 2 000 étudiants au sein de ses différents départements de pointe.</p>
+                    <p>Rattaché à l'Université de Montpellier, l'IUT propose des parcours d'études axés sur l'autonomie, la mise en pratique et l'alternance. Son département <strong>GEII (Génie Électrique et Informatique Industrielle)</strong> est particulièrement réputé pour la qualité de ses équipements techniques et de son encadrement professoral.</p>
+
+                    <h3 class="mt-8">Mon parcours à l'IUT</h3>
+                    <p>J'y ai effectué mes trois années de Bachelor Universitaire de Technologie (BUT) au sein du département GEII :</p>
+                    <ul>
+                        <li><strong>Parcours Électronique et Systèmes Embarqués (ESE) :</strong> Une formation axée sur la conception matérielle, le routage de PCB sous KiCad, la programmation bas niveau (C/C++ pour STM32 sous FreeRTOS) et le traitement du signal.</li>
+                        <li><strong>Double diplôme IAE Montpellier :</strong> En parallèle de ma formation technique, j'ai suivi un double cursus à l'Institut d'Administration des Entreprises pour développer des compétences solides en gestion de projet, management et économie.</li>
+                    </ul>
+                    <p>Durant ce cursus, j'ai pu mettre en œuvre de nombreux projets concrets en bureau d'étude, allant de la conception d'un robot suiveur de ligne à la création d'un système d'asservissement pour tracker solaire, en passant par le routage complet d'une carte d'extension microcontrôleur double couche.</p>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="etab-sidebar-card">
+                    <h3>Fiche d'identité</h3>
+                    <ul class="etab-meta-list">
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Création</span>
+                            <span class="etab-meta-value">12 Juillet 1966</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Affiliation</span>
+                            <span class="etab-meta-value">Université de Montpellier</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Adresse</span>
+                            <span class="etab-meta-value">99 Av. d'Occitanie, Mpl</span>
+                        </li>
+                        <li class="etab-meta-item">
+                            <span class="etab-meta-label">Formation</span>
+                            <span class="etab-meta-value">BUT GEII (ESE)</span>
+                        </li>
+                        <li class="etab-meta-item" style="padding-top: 16px;">
+                            <a href="https://iut-montpellier-sete.edu.umontpellier.fr/" target="_blank" class="btn btn-primary" style="width: 100%; font-size: var(--text-xs); padding: 8px 0;">Site Officiel &nearrow;</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="text-center mt-8 reveal">
+                <a href="../index.html" class="btn btn-secondary">&larr; Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </header>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
