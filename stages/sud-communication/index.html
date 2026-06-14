@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Sud Communication - Faustin Larose</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../projets/index.html" class="nav-link">Projets</a>
+                <a href="../../stages/index.html" class="nav-link active">Stages</a>
+                <a href="../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">STAGE BUT2 · Février–Avril 2025 · 8 semaines</p>
+                <h1 class="mb-4">Sud Communication (Mauguio)</h1>
+                <p>Radiocommunication et électronique marine (vente, SAV, conseil). Trois missions principales lors de ce stage.</p>
+                <div class="tags">
+                    <span class="tag">Concevoir</span>
+                    <span class="tag">Vérifier</span>
+                    <span class="tag">Maintenir</span>
+                    <span class="tag">Implanter</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <img src="../../assets/images/stage-but2/fig01-logo-sud-communication.png" alt="Logo Sud Communication" style="max-width:200px; margin-bottom: 2rem;" onerror="this.style.display='none'">
+
+                <h3>1) SAV en atelier : diagnostic et tests d'équipements de radiocommunication</h3>
+                <p>Mise en place d'une procédure de test structurée pour les talkies-walkies et VHF marines : contrôle visuel, test des batteries, des commandes, de l'antenne, et mesure RF au Surecom SW-102. L'objectif était l'identification de dysfonctionnements, avec traçabilité et rédaction de fiches de diagnostic.</p>
+                <div class="grid grid-2 mt-4 mb-8">
+                    <img src="../../assets/images/stage-but2/fig03-chargement-batteries.jpg" alt="Chargement des batteries" onerror="this.style.display='none'">
+                    <img src="../../assets/images/stage-but2/fig04-rapport-test.jpg" alt="Rapport de test" onerror="this.style.display='none'">
+                </div>
+
+                <h3>2) Mission technique : reconstitution d'un talkie-walkie Icom IC-M35</h3>
+                <p>Reconstitution d'un équipement fonctionnel à partir de pièces détachées. Cela a nécessité la sélection des bonnes pièces, le démontage méticuleux, la soudure de composants CMS, l'exécution de tests progressifs et la validation finale (alimentation Li-ion 7,4V, vérification des commandes, mesure de puissance RF à ~6W et test audio).</p>
+                <div class="grid grid-2 mt-4 mb-8">
+                    <img src="../../assets/images/stage-but2/fig07-demontage-recuperation.jpg" alt="Démontage d'autre équipement pour récupérer du matériel" onerror="this.style.display='none'">
+                    <img src="../../assets/images/stage-but2/fig08-remontage-talkie.jpg" alt="Remontage du talkie-walkie" onerror="this.style.display='none'">
+                </div>
+
+                <h3>3) Projet principal : installation embarquée (Vedette SNSM)</h3>
+                <p>Participation à l'installation d'équipements électroniques (GPS, VHF, PC marin, convertisseurs) à bord d'une vedette SNSM dans le cadre d'une refonte mi-vie. Le projet imposait des contraintes fortes en matière d'étanchéité, de gestion de l'espace limité, de cheminement optimisé des câbles, de conception du tableau de répartition des disjoncteurs et d'étiquetage soigné.</p>
+                <div class="grid grid-2 mt-4 mb-8">
+                    <img src="../../assets/images/stage-but2/fig23-installation-tableau-bord.jpg" alt="Installation des premiers équipements sur tableau de bord" onerror="this.style.display='none'">
+                    <img src="../../assets/images/stage-but2/fig25-tableau-disjoncteurs.jpg" alt="Tableau de répartition des disjoncteurs" onerror="this.style.display='none'">
+                </div>
+            </div>
+            
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+            </div>
+
+            <div class="mt-8">
+                <a href="../index.html" class="btn btn-secondary">? Retour aux stages</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

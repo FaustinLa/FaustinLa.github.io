@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Assistant sur Dell Wyse - Projet Personnel - Faustin Larose</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../../projets/index.html" class="nav-link active">Projets</a>
+                <a href="../../../stages/index.html" class="nav-link">Stages</a>
+                <a href="../../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème"></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">Projet Personnel · Logiciel · Embarqué</p>
+                <h1 class="mb-4">Home Assistant sur Dell Wyse</h1>
+                <div class="tags">
+                    <span class="tag">Concevoir</span>
+                    <span class="tag">Implanter</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <p>Déploiement d'un véritable projet d'infrastructure embarquée <em>low-cost</em>. L'objectif était de concevoir un serveur domotique robuste pour centraliser la gestion du logement avec une consommation électrique minimale.</p>
+                
+                <h3>Architecture Matérielle</h3>
+                <p>Le serveur est construit sur la base d'un "thin client" récupéré et modifié :</p>
+                <ul>
+                    <li><strong>Base :</strong> Dell Wyse Dx0D.</li>
+                    <li><strong>Upgrades :</strong> Passage à 8 Go de RAM DDR3L et remplacement du stockage par un SSD SATA.</li>
+                    <li><strong>Refroidissement :</strong> Ajout de ventilateurs USB 40mm pour assurer un refroidissement actif 24/7 du système.</li>
+                </ul>
+
+                <h3>Infrastructure Logicielle</h3>
+                <p>Le système repose sur un environnement Linux fiabilisé :</p>
+                <ul>
+                    <li><strong>OS :</strong> Debian server (headless).</li>
+                    <li><strong>Conteneurisation :</strong> Utilisation de <strong>Docker</strong> pour isoler les services (Home Assistant, bases de données, broker MQTT éventuel).</li>
+                </ul>
+
+                <h3>Intégrations configurées</h3>
+                <!-- TODO: Complete the integrations list -->
+                <ul class="text-secondary" style="background-color: var(--bg-secondary); padding: 20px 20px 20px 40px; border-radius: var(--radius-md);">
+                    <li><em><!-- TODO: Ajouter ici le détail des intégrations (ex: Zigbee2MQTT, lampes Philips Hue, capteurs de température Xiaomi, etc.) --></em></li>
+                    <li><em><!-- TODO: Intégration 2 --></em></li>
+                    <li><em><!-- TODO: Intégration 3 --></em></li>
+                </ul>
+
+                <!-- TODO: Add photos of the Dell Wyse / Home Assistant dashboard -->
+                <div class="mt-8 mb-8 text-center">
+                    <img src="../../../assets/images/home-assistant/dashboard.jpg" alt="Dashboard Home Assistant" class="card" style="padding: 0; overflow: hidden; margin: 0 auto;" onerror="this.style.display='none'">
+                    <p class="text-secondary small mt-2"><em><!-- TODO: Ajouter des photos du serveur Dell Wyse et/ou des captures du dashboard Home Assistant dans assets/images/home-assistant/ --></em></p>
+                </div>
+
+                <h3 class="mt-8">Développement annexe en cours</h3>
+                <p>Conception et impression 3D d'une "enclosure" (boîtier personnalisé) en PETG/ASA. L'impression est réalisée sur une imprimante Anet A8 modifiée (firmware Marlin et contrôle réseau via OctoPrint).</p>
+
+                <div class="card mt-8" style="background-color: var(--bg-primary);">
+                    <h4 style="margin-top: 0; margin-bottom: 8px;">Bilan des apprentissages</h4>
+                    <p class="text-secondary small" style="margin-bottom: 0;">Ce projet concret est une excellente introduction à l'administration de systèmes Linux embarqués, à la gestion de conteneurs avec Docker, à la configuration de réseaux locaux complexes et bien sûr, à la logique d'automatisation domestique de bout en bout.</p>
+                </div>
+            </div>
+            
+            <div class="pcb-line reveal"><div class="pcb-line-trace"></div><div class="pcb-dot pcb-dot-1"></div></div>
+
+            <div class="mt-8"><a href="../../../projets/index.html" class="btn btn-secondary">? Retour aux projets</a></div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; <span id="current-year"></span> Faustin Larose.</p></div></footer>
+    <script src="../../../scripts/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

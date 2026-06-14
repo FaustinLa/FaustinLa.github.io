@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE IoT S6 - Projet BUT3 - Faustin Larose</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../../projets/index.html" class="nav-link active">Projets</a>
+                <a href="../../../stages/index.html" class="nav-link">Stages</a>
+                <a href="../../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème"></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">BUT3 · Embarqué · Logiciel</p>
+                <h1 class="mb-4">SAE IoT S6</h1>
+                <div class="tags">
+                    <span class="tag">Concevoir</span>
+                    <span class="tag">Implanter</span>
+                    <span class="tag">FreeRTOS</span>
+                    <span class="tag">MQTT</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <p>Développement en équipe d'un système IoT complet articulé autour de 4 composants majeurs.</p>
+                
+                <h3>Architecture du projet</h3>
+                <ul>
+                    <li><strong>IHM de configuration :</strong> Interface développée avec Qt 5 pour configurer les nœuds (NodeID, clé AES via liaison série).</li>
+                    <li><strong>Gateway IoT :</strong> Pont NRF vers MQTT sur une carte Nucleo-F439ZI fonctionnant sous FreeRTOS avec la pile lwIP pour le réseau (connexion au broker MQTT 3.1.1).</li>
+                    <li><strong>Serveur MQTT & BDD :</strong> Déchiffrement AES-128 CBC des trames et insertion en base de données.</li>
+                </ul>
+
+                <h3>Particularités techniques</h3>
+                <p>Mise en place des protocoles NRF24L01 et MQTT 3.1.1 avec sécurisation AES-128 CBC. La complexité réseau a nécessité des ajustements fins, comme l'ajout d'un délai <code>vTaskDelay(5000)</code> avant la tentative de connexion MQTT afin de laisser la pile lwIP s'initialiser correctement.</p>
+
+                <!-- TODO: Add architecture diagram or photos of the Gateway -->
+                <p class="text-secondary small mt-8"><em><!-- TODO: Insérer ici un diagramme d'architecture réseau ou une photo de la carte Nucleo --></em></p>
+            </div>
+            
+            <div class="pcb-line reveal"><div class="pcb-line-trace"></div><div class="pcb-dot pcb-dot-1"></div></div>
+
+            <div class="mt-8"><a href="../../../projets/index.html" class="btn btn-secondary">? Retour aux projets</a></div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; <span id="current-year"></span> Faustin Larose.</p></div></footer>
+    <script src="../../../scripts/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

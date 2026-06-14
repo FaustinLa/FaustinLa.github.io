@@ -1,437 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Stages – Portfolio</title>
-  <meta name="description" content="Stages BUT – Portfolio GEII (ESE) : missions, preuves et compétences mobilisées." />
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stages - Faustin Larose</title>
+    <meta name="description" content="Mes expériences professionnelles et stages en entreprise.">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-    <nav>
-      <a href="/projets/">Projets</a>
-      <a href="/stages/">Stages</a>
-      <a href="/competences/">Compétences</a>
-      <a href="/a-propos/">À propos</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <div class="stack">
-
-    <!-- INTRO -->
-    <div class="card">
-      <h1>Stages</h1>
-      <p class="muted">
-        Cette page présente mes expériences professionnelles. Pour le stage de BUT2, je mets l’accent sur les preuves
-        (photos, procédures, mesures) et le lien direct avec les compétences du référentiel GEII (parcours ESE).
-      </p>
-      <div class="btn-row">
-        <a class="btn primary" href="/competences/">Voir les compétences GEII</a>
-        <a class="btn" href="/projets/">Voir les projets</a>
-      </div>
-    </div>
-
-    <!-- STAGE BUT2 (DÉPLIABLE) -->
-    <details class="card" open>
-      <summary>
-        <span><b>Stage BUT2 (S4)</b> – Sud Communication (Mauguio) : électronique marine & radiocommunication</span>
-        <span class="chev"></span>
-      </summary>
-
-      <div class="content">
-
-        <!-- LIEN COMPÉTENCES (MIS EN AVANT) -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Compétences mobilisées (lien direct)</h2>
-          <p class="muted" style="margin:0 0 10px;">
-            Les missions du stage illustrent fortement les compétences GEII ci-dessous. J’appuie mon propos sur des preuves :
-            rapports de tests, mesures RF, réparations, installation à bord, repérage/organisation.
-          </p>
-          <div class="btn-row">
-            <a class="btn" href="/competences/#concevoir">Concevoir</a>
-            <a class="btn" href="/competences/#verifier">Vérifier</a>
-            <a class="btn" href="/competences/#maintenir">Maintenir</a>
-            <a class="btn" href="/competences/#implanter">Implanter</a>
-          </div>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link active">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
         </div>
+    </header>
 
-        <!-- INFOS GÉNÉRALES -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Informations clés</h2>
-          <ul style="margin:0;">
-            <li><b>Entreprise :</b> Sud Communication</li>
-            <li><b>Localisation :</b> Mauguio (près de Montpellier)</li>
-            <li><b>Période :</b> 24 février → 18 avril 2025 (8 semaines)</li>
-            <li><b>Domaine :</b> radiocommunication, électronique marine (vente, maintenance/SAV, conseil)</li>
-            <li><b>Organisation :</b> atelier/SAV + missions techniques + projet principal SNSM</li>
-          </ul>
+    <main>
+        <div class="container">
+            <section class="section reveal">
+                <h1>Mes Stages</h1>
+                <p>Découvrez mes expériences professionnelles en entreprise, illustrant la mise en pratique de mes compétences en électronique et développement logiciel dans des contextes industriels réels. Cliquez sur un stage pour afficher son détail.</p>
+                
+                <div class="grid grid-2 mt-8">
+                    <!-- STAGE BUT3 -->
+                    <div class="card-link" data-modal="modal-stage-capelec">
+                        <article class="card">
+                            <h3 class="mb-2">Capelec</h3>
+                            <p class="hero-subtitle mb-4">Stage BUT3 · Montpellier · Jan–Mai 2026 (16 semaines)</p>
+                            <p>Développement logiciel Qt 5 / C++ sur l'équipement de diagnostic automobile CAP4350. Implémentation des protocoles OBD-II et UDS.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Implanter</span>
+                                <span class="tag">Maintenir</span>
+                            </div>
+                        </article>
+                    </div>
 
-          <img src="/assets/images/stage-but2/fig01-logo-sud-communication.png"
-               alt="Figure 1 : Logo Sud Communication">
-          <p class="figcaption">Figure 1 : Logo Sud Communication</p>
+                    <!-- STAGE BUT2 -->
+                    <div class="card-link" data-modal="modal-stage-sud-communication">
+                        <article class="card">
+                            <h3 class="mb-2">Sud Communication</h3>
+                            <p class="hero-subtitle mb-4">Stage BUT2 · Mauguio · Fév–Avr 2025 (8 semaines)</p>
+                            <p>Radiocommunication et électronique marine. SAV en atelier (diagnostic, test de VHF/Talkies), reconstitution matériel CMS, et installation embarquée sur vedette SNSM.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">Maintenir</span>
+                                <span class="tag">Implanter</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <!-- 1) SAV -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">1) Service après-vente / atelier : diagnostic et tests</h2>
+    <!-- ==========================================================================
+       DIALOGS / DIALOG MODALS SECTION (STAGES)
+       ========================================================================== -->
 
-          <p>
-            Une part importante du stage concerne le SAV en atelier. J’ai appliqué des procédures de tests afin de vérifier le bon
-            fonctionnement d’équipements de radiocommunication (talkies-walkies, VHF marines). Cette activité correspond directement à :
-            <b>AC12.01 – Appliquer une procédure d’essais</b>.
-          </p>
+    <!-- MODAL: Stage BUT3 Capelec -->
+    <dialog id="modal-stage-capelec">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">Stage BUT3 · Montpellier · Janvier–Mai 2026 (16 semaines)</p>
+            <h2 class="mb-4">Stage R&D – Capelec</h2>
+            <div class="tags mb-6">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Implanter</span>
+                <span class="tag">Maintenir</span>
+            </div>
 
-          <p>
-            Les contrôles et mesures réalisés (batterie, commandes, émission/réception et puissance RF) m’ont permis d’identifier des
-            dysfonctionnements matériels ou fonctionnels, ce qui s’inscrit dans :
-            <b>AC12.02 – Identifier un dysfonctionnement</b>.
-          </p>
+            <div class="detail-content">
+                <p>Au cours de ce stage de fin d'études en Recherche & Développement, j'ai intégré la PME Capelec (Montpellier), spécialisée dans la conception et la fabrication d'équipements de contrôle technique et d'analyseurs de gaz.</p>
+                
+                <h3>Missions Principales</h3>
+                <ul>
+                    <li><strong>Développement C++ / Qt 5 :</strong> Contribution active au logiciel phare <strong>CAP4350</strong> (application desktop de diagnostic antipollution automobile communicant via bus CAN).</li>
+                    <li><strong>Protocoles de Communication :</strong> Implémentation et test de modules de communication OBD-II (SAE J1979) et UDS (ISO 14229) pour l'échange de données de diagnostic avec les véhicules.</li>
+                    <li><strong>Refonte IHM :</strong> Refonte complète de la console d'affichage de texte brute en un arbre structuré et interactif (Migration de <code>QTextEdit</code> vers <code>QTreeWidget</code>).</li>
+                </ul>
 
-          <p>
-            Enfin, l’analyse des résultats et la rédaction de fiches de diagnostic assurent la traçabilité pour la suite du SAV, en lien avec :
-            <b>AC23.03 – Diagnostiquer un dysfonctionnement</b>.
-          </p>
-
-          <img src="/assets/images/stage-but2/fig03-chargement-batteries.jpg"
-               alt="Figure 3 : Chargement des batteries">
-          <p class="figcaption">Figure 3 : Chargement des batteries</p>
-
-          <h3 style="margin-top:12px;">Exemple de démarche de test</h3>
-          <ul>
-            <li><b>Contrôle visuel :</b> coque, accessoires, connectique, joints.</li>
-            <li><b>Batterie :</b> mesure tension au multimètre, contrôle de charge.</li>
-            <li><b>Commandes :</b> test on/off, volume, canaux, PTT, squelch.</li>
-            <li><b>Antenne :</b> contrôle mécanique.</li>
-            <li><b>Mesure RF :</b> validation de la puissance avec le <b>Surecom SW-102</b>.</li>
-            <li><b>Traçabilité :</b> fiche de test complétée.</li>
-          </ul>
-
-          <img src="/assets/images/stage-but2/fig04-rapport-test.jpg"
-               alt="Figure 4 : Rapport de test">
-          <p class="figcaption">Figure 4 : Rapport de test</p>
-
-          <img src="/assets/images/stage-but2/fig09-surecom-sw102.jpg"
-               alt="Figure 9 : Surecom SW-102">
-          <p class="figcaption">Figure 9 : Surecom SW-102</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#verifier">Vérifier</a> (procédures/mesures) •
-            <a href="/competences/#maintenir">Maintenir</a> (diagnostic/traçabilité)
-          </p>
+                <h3>Qualités Mobilisées & Apprentissages</h3>
+                <ul>
+                    <li><strong>Rigueur et Méthodologie :</strong> Lecture et mise en pratique de normes automobiles standardisées (SAE, ISO).</li>
+                    <li><strong>Travail en autonomie :</strong> Prise en main d'une base de code industrielle complexe existante.</li>
+                    <li><strong>Outils industriels :</strong> Utilisation avancée de Git pour le versioning et de Doxygen pour documenter le code.</li>
+                </ul>
+            </div>
         </div>
+    </dialog>
 
-        <!-- 2) IC-M35 -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">2) Mission technique : reconstituer un talkie Icom IC-M35</h2>
+    <!-- MODAL: Stage BUT2 Sud Communication -->
+    <dialog id="modal-stage-sud-communication">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">Stage BUT2 · Mauguio · Février–Avril 2025 (8 semaines)</p>
+            <h2 class="mb-4">Stage Technique – Sud Communication Marine</h2>
+            <div class="tags mb-6">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Vérifier</span>
+                <span class="tag">Maintenir</span>
+                <span class="tag">Implanter</span>
+            </div>
 
-          <p>
-            Une mission technique spécifique m’a été confiée : reconstituer un talkie marin Icom IC-M35 à partir de pièces détachées disponibles
-            en atelier. Cette intervention relève de :
-            <b>AC23.02 – Exécuter une maintenance corrective</b>, car l’objectif est de remettre en état un équipement existant.
-          </p>
+            <div class="detail-content">
+                <p>Ce stage m'a permis de découvrir le domaine de la radiocommunication maritime et de l'électronique de bord au sein de l'entreprise Sud Communication Marine à Mauguio (34).</p>
+                
+                <h3>Missions Principales</h3>
+                <ul>
+                    <li><strong>SAV en Atelier :</strong> Diagnostic matériel et test d'appareils de communication VHF et talkies-walkies professionnels maritimes.</li>
+                    <li><strong>Soudure CMS :</strong> Reconstitution et réparation de circuits imprimés intégrant des composants CMS de petite taille.</li>
+                    <li><strong>Installations sur site :</strong> Intégration physique et raccordement électrique d'équipements de radiocommunication (antennes, récepteurs GPS/VHF) directement à bord de navires, notamment sur une vedette de la SNSM.</li>
+                </ul>
 
-          <p>
-            Les opérations de démontage, sélection de pièces, remplacement/soudure ont été réalisées avec une méthode structurée et suivies de contrôles,
-            ce qui correspond à :
-            <b>AC23.01 – Exécuter l’entretien et le contrôle en respectant une procédure</b>.
-          </p>
-
-          <p>
-            La validation finale (audio, commandes, puissance RF) illustre :
-            <b>AC22.01 – Identifier les tests et mesures nécessaires pour valider un système</b>.
-          </p>
-
-          <img src="/assets/images/stage-but2/fig05-icom-ic-m35.jpg"
-               alt="Figure 5 : Modèle Icom IC-M35">
-          <p class="figcaption">Figure 5 : Modèle Icom IC-M35</p>
-
-          <img src="/assets/images/stage-but2/fig07-demontage-recuperation.jpg"
-               alt="Figure 7 : Démontage d’autre équipement pour récupérer du matériel">
-          <p class="figcaption">Figure 7 : Démontage d’autre équipement pour récupérer du matériel</p>
-
-          <img src="/assets/images/stage-but2/fig08-remontage-talkie.jpg"
-               alt="Figure 8 : Remontage du talkie-walkie">
-          <p class="figcaption">Figure 8 : Remontage du talkie-walkie</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#maintenir">Maintenir</a> (réparation) •
-            <a href="/competences/#verifier">Vérifier</a> (tests/validation)
-          </p>
+                <h3>Qualités Mobilisées & Apprentissages</h3>
+                <ul>
+                    <li><strong>Dextérité et Précision :</strong> Travail soigné de soudure sur cartes miniatures.</li>
+                    <li><strong>Diagnostic méthodique :</strong> Recherche et isolation de pannes physiques et électriques.</li>
+                    <li><strong>Adaptabilité :</strong> Intervention directe dans l'environnement maritime exigeant (cabine exiguë, vibrations, corrosion).</li>
+                </ul>
+            </div>
         </div>
+    </dialog>
 
-        <!-- 3) SNSM -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">3) Projet principal : installation d’équipements embarqués (SNSM)</h2>
-
-          <p>
-            Le projet principal du stage concerne l’installation d’équipements électroniques à bord d’une vedette SNSM.
-            Cette mission correspond à :
-            <b>AC24.01ESE – Appliquer une procédure de fabrication pour implanter des composants matériels ou logiciels</b>,
-            à travers l’installation d’équipements (GPS, VHF, PC marin, convertisseurs).
-          </p>
-
-          <p>
-            Après installation, des vérifications ont été réalisées pour garantir le bon fonctionnement et la conformité du système,
-            ce qui relève de :
-            <b>AC24.02ESE – Évaluer la conformité du système</b>.
-          </p>
-
-          <p>
-            En amont, l’analyse des contraintes (espace, cheminement des câbles, organisation électrique) s’inscrit dans :
-            <b>AC31.01 – Contribuer à l’analyse du besoin et à la rédaction d’un cahier des charges</b>.
-          </p>
-
-          <img src="/assets/images/stage-but2/fig23-installation-tableau-bord.jpg"
-               alt="Figure 23 : Installation des premiers équipements sur tableau de bord">
-          <p class="figcaption">Figure 23 : Installation des premiers équipements sur tableau de bord</p>
-
-          <img src="/assets/images/stage-but2/fig25-tableau-disjoncteurs.jpg"
-               alt="Figure 25 : Tableau de répartition des disjoncteurs">
-          <p class="figcaption">Figure 25 : Tableau de répartition des disjoncteurs</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#implanter">Implanter</a> (installation/mise en place) •
-            <a href="/competences/#concevoir">Concevoir</a> (organisation/contraintes) •
-            <a href="/competences/#verifier">Vérifier</a> (validation)
-          </p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
         </div>
+    </footer>
 
-        <!-- BILAN -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Bilan</h2>
-          <p>
-            Ce stage m’a permis de développer principalement les compétences <b>Vérifier</b>, <b>Maintenir</b> et <b>Implanter</b>
-            à travers des situations professionnelles concrètes. La compétence <b>Concevoir</b> intervient principalement lors des phases
-            de préparation et d’organisation des solutions techniques.
-          </p>
-
-          <div class="btn-row">
-            <a class="btn primary" href="/competences/">→ Voir la page Compétences</a>
-            <a class="btn" href="/projets/">→ Voir les projets</a>
-          </div>
-        </div>
-
-      </div>
-    </details>
-
-  </div>
-</main>
-
-<footer>© <span id="y"></span> Faustin Larose</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
-</html>      </div>
-    </div>
-
-    <!-- STAGE BUT2 (DÉPLIABLE) -->
-    <details class="card" open>
-      <summary>
-        <span><b>Stage BUT2 (S4)</b> – Sud Communication (Mauguio) : électronique marine & radiocommunication</span>
-        <span class="chev"></span>
-      </summary>
-
-      <div class="content">
-
-        <!-- Bloc mise en avant : lien compétences -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Compétences mobilisées (lien direct)</h2>
-          <p class="muted" style="margin:0 0 10px;">
-            Les missions du stage illustrent fortement les compétences ci-dessous. Je m’appuie sur des preuves (procédures,
-            rapports de tests, mesures RF, installation à bord, documentation).
-          </p>
-          <div class="btn-row">
-            <a class="btn" href="/competences/#concevoir">Concevoir</a>
-            <a class="btn" href="/competences/#verifier">Vérifier</a>
-            <a class="btn" href="/competences/#maintenir">Maintenir</a>
-            <a class="btn" href="/competences/#implanter">Implanter</a>
-          </div>
-        </div>
-
-        <!-- Infos générales -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Informations clés</h2>
-          <ul style="margin:0;">
-            <li><b>Entreprise :</b> Sud Communication</li>
-            <li><b>Localisation :</b> Mauguio (près de Montpellier)</li>
-            <li><b>Période :</b> 24 février → 18 avril 2025 (8 semaines)</li>
-            <li><b>Domaine :</b> radiocommunication, électronique marine (vente, maintenance/SAV, conseil)</li>
-            <li><b>Organisation :</b> missions atelier + interventions terrain + projet principal SNSM</li>
-          </ul>
-
-          <!-- Image : logo -->
-          <img src="/assets/images/stage-but2/fig01-logo-sud-communication.png" alt="Figure 1 : Logo Sud Communication">
-          <p class="figcaption">Figure 1 : Logo Sud Communication</p>
-        </div>
-
-        <!-- 1) SAV -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">1) Atelier / SAV : diagnostic, maintenance et réparation</h2>
-
-          <p class="muted" style="margin:0 0 10px;">
-            <b>Lien compétences :</b>
-            <a href="/competences/#verifier">Vérifier</a> •
-            <a href="/competences/#maintenir">Maintenir</a>
-          </p>
-
-          <p>
-            Une mission importante du stage concerne le service après-vente en atelier : contrôle préventif et réparation d’équipements
-            (talkies-walkies, VHF marines, accessoires). L’objectif est de garantir la fiabilité, la durabilité des matériels et la satisfaction client.
-          </p>
-
-          <!-- Image : chargement batteries -->
-          <img src="/assets/images/stage-but2/fig03-chargement-batteries.jpg" alt="Figure 3 : Chargement des batteries">
-          <p class="figcaption">Figure 3 : Chargement des batteries</p>
-
-          <h3 style="margin-top:12px;">Procédure de diagnostic (exemple structuré)</h3>
-          <ul>
-            <li><b>Réception :</b> fiche d’entrée (identification, symptôme, coordonnées).</li>
-            <li><b>Contrôle visuel :</b> coque, accessoires, joints, connectique.</li>
-            <li><b>Batterie :</b> mesure tension au multimètre, inspection, cycle de charge si nécessaire.</li>
-            <li><b>Commandes :</b> test on/off, volume, canaux, PTT, squelch.</li>
-            <li><b>Antenne :</b> contrôle mécanique (casse/usure).</li>
-            <li><b>Émission :</b> test micro via un autre poste + validation TX.</li>
-            <li><b>Puissance :</b> mesure RF au <b>Surecom SW-102</b> (validation de la puissance).</li>
-            <li><b>Réception :</b> test haut-parleur, squelch, bruit parasite.</li>
-            <li><b>Traçabilité :</b> fiche de test complétée et transmise au technicien.</li>
-          </ul>
-
-          <!-- Image : rapport de test -->
-          <img src="/assets/images/stage-but2/fig04-rapport-test.jpg" alt="Figure 4 : Rapport de test">
-          <p class="figcaption">Figure 4 : Rapport de test</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#verifier">Vérifier</a> (procédure/essais) •
-            <a href="/competences/#maintenir">Maintenir</a> (diagnostic/traçabilité)
-          </p>
-
-          <!-- Image : Surecom -->
-          <img src="/assets/images/stage-but2/fig09-surecom-sw102.jpg" alt="Figure 9 : Surecom SW-102">
-          <p class="figcaption">Figure 9 : Surecom SW-102</p>
-          <p class="muted small">
-            Compétence : <a href="/competences/#verifier">Vérifier</a> (mesure puissance RF)
-          </p>
-        </div>
-
-        <!-- 2) Reconstruction IC-M35 -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">2) Mission technique : reconstituer un talkie Icom IC-M35 à partir de pièces</h2>
-
-          <p class="muted" style="margin:0 0 10px;">
-            <b>Lien compétences :</b>
-            <a href="/competences/#maintenir">Maintenir</a> •
-            <a href="/competences/#verifier">Vérifier</a>
-          </p>
-
-          <p>
-            Une mission spécifique m’a été confiée : reconstruire un talkie marin <b>Icom IC-M35</b> à partir de pièces détachées disponibles
-            en atelier. L’objectif est d’exploiter des composants encore fonctionnels récupérés sur des appareils partiellement défectueux.
-          </p>
-
-          <!-- Image : modèle -->
-          <img src="/assets/images/stage-but2/fig05-icom-ic-m35.jpg" alt="Figure 5 : Modèle Icom IC-M35">
-          <p class="figcaption">Figure 5 : Modèle Icom IC-M35</p>
-
-          <h3 style="margin-top:12px;">Sélection / montage / soudage</h3>
-          <ul>
-            <li>Sélection d’une coque + joint d’étanchéité en bon état.</li>
-            <li>Choix d’une carte la plus complète possible, puis transfert de pièces depuis d’autres cartes.</li>
-            <li>Récupération de composants sur d’autres équipements lorsque nécessaire.</li>
-            <li>Soudage précis (risques de court-circuit si mauvaise soudure), inspection à la loupe.</li>
-            <li>Test après chaque remplacement (validation progressive).</li>
-          </ul>
-
-          <!-- Image : démontage pour récupérer -->
-          <img src="/assets/images/stage-but2/fig07-demontage-recuperation.jpg" alt="Figure 7 : Démontage d’autre équipement pour récupérer du matériel">
-          <p class="figcaption">Figure 7 : Démontage d’autre équipement pour récupérer du matériel</p>
-
-          <h3 style="margin-top:12px;">Tests et validation</h3>
-          <ul>
-            <li>Alimentation : batterie Li-ion 7,4 V (seuil opérationnel &gt; 7 V).</li>
-            <li>Validation commandes : alterna/PTT, squelch, volume, sélection canaux.</li>
-            <li>Mesure RF : validation de la puissance au Surecom SW-102 (≈ 6 W).</li>
-            <li>Audio : clarté micro en émission + test haut-parleur à différents volumes.</li>
-            <li>Correction d’anomalies : ex. défaut de contact sur connecteur audio.</li>
-          </ul>
-
-          <!-- Image : remontage -->
-          <img src="/assets/images/stage-but2/fig08-remontage-talkie.jpg" alt="Figure 8 : Remontage du talkie-walkie">
-          <p class="figcaption">Figure 8 : Remontage du talkie-walkie</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#maintenir">Maintenir</a> (réparation) •
-            <a href="/competences/#verifier">Vérifier</a> (tests/validation)
-          </p>
-        </div>
-
-        <!-- 3) Projet SNSM -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">3) Projet principal : installation d’équipements sur une vedette SNSM</h2>
-
-          <p class="muted" style="margin:0 0 10px;">
-            <b>Lien compétences :</b>
-            <a href="/competences/#concevoir">Concevoir</a> •
-            <a href="/competences/#implanter">Implanter</a> •
-            <a href="/competences/#verifier">Vérifier</a>
-          </p>
-
-          <p>
-            Mission : participation à l’installation d’équipements électroniques (navigation/communication/sécurité) dans le cadre d’une refonte “mi-vie”
-            d’une vedette SNSM. L’environnement marin impose des contraintes fortes : espace limité, étanchéité, fiabilité, sécurité et traçabilité.
-          </p>
-
-          <!-- Image : installation pupitre -->
-          <img src="/assets/images/stage-but2/fig23-installation-tableau-bord.jpg" alt="Figure 23 : Installation des premiers équipements sur tableau de bord">
-          <p class="figcaption">Figure 23 : Installation des premiers équipements sur tableau de bord</p>
-
-          <h3 style="margin-top:12px;">Ce que j’ai fait (exemples)</h3>
-          <ul>
-            <li>Installation d’équipements et préparation des emplacements (dimensions/positionnement).</li>
-            <li>Anticipation du cheminement des câbles vers le tableau électrique.</li>
-            <li>Fixation supports (trépieds) et ajustements selon l’encombrement réel des appareils.</li>
-            <li>Étiquetage / repérage pour faciliter la maintenance future.</li>
-          </ul>
-
-          <!-- Image : tableau disjoncteurs (optionnelle mais très utile) -->
-          <img src="/assets/images/stage-but2/fig25-tableau-disjoncteurs.jpg" alt="Figure 25 : Tableau de répartition des disjoncteurs">
-          <p class="figcaption">Figure 25 : Tableau de répartition des disjoncteurs</p>
-
-          <p class="muted small">
-            Compétences : <a href="/competences/#concevoir">Concevoir</a> (organisation/choix) •
-            <a href="/competences/#implanter">Implanter</a> (installation) •
-            <a href="/competences/#verifier">Vérifier</a> (validation)
-          </p>
-        </div>
-
-        <!-- BILAN -->
-        <div class="card" style="margin:14px 0;">
-          <h2 style="margin:0 0 6px;">Bilan (apports)</h2>
-          <ul>
-            <li>Rigueur en environnement embarqué : contraintes d’espace, sécurité, coordination.</li>
-            <li>Importance de la préparation amont : repérage, organisation électrique, documentation.</li>
-            <li>Traçabilité : fiches de tests, repérage, procédures et validation.</li>
-            <li>Développement de l’autonomie, organisation, communication et méthode de diagnostic.</li>
-          </ul>
-
-          <div class="btn-row">
-            <a class="btn primary" href="/competences/">→ Voir la page Compétences</a>
-            <a class="btn" href="/projets/">→ Voir les projets</a>
-          </div>
-        </div>
-
-      </div>
-    </details>
-
-  </div>
-</main>
-
-<footer>© <span id="y"></span> Faustin Larose</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

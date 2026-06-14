@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Capelec - Faustin Larose</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../projets/index.html" class="nav-link">Projets</a>
+                <a href="../../stages/index.html" class="nav-link active">Stages</a>
+                <a href="../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">STAGE BUT3 · Janvier–Mai 2026 · 16 semaines</p>
+                <h1 class="mb-4">Capelec (Montpellier)</h1>
+                <p>Développement logiciel Qt 5 / C++ pour l'équipement de diagnostic automobile CAP4350.</p>
+                <div class="tags">
+                    <span class="tag">Concevoir</span>
+                    <span class="tag">Implanter</span>
+                    <span class="tag">Maintenir</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <h3>Présentation de l'entreprise</h3>
+                <p>Capelec est une PME d'environ 40 personnes basée à Montpellier, spécialisée dans la conception et la fabrication d'équipements de contrôle technique et de diagnostic automobile à destination des professionnels de l'automobile.</p>
+
+                <h3>Le projet technique : CAP4350</h3>
+                <p>Au cours de ce stage, j'ai activement contribué au développement du logiciel CAP4350. Il s'agit d'une application desktop développée en Qt 5.15.2 / C++ qui gère la communication de diagnostic OBD-II entre un PC et un véhicule via bus CAN.</p>
+                
+                <p>Pour le détail complet des réalisations techniques (implémentation de protocoles SAE J1979, UDS ISO 14229, parsing des trames CAN, etc.), je vous invite à consulter la page détaillée du projet.</p>
+                
+                <div class="mt-4 mb-8">
+                    <a href="../../projets/but3/cap4350/index.html" class="btn btn-primary">Voir le projet technique CAP4350</a>
+                </div>
+
+                <h3>Bilan du stage</h3>
+                <p>Ce stage a été une excellente opportunité de découvrir le <strong>développement logiciel industriel en Qt/C++</strong> au sein d'une équipe R&D. J'ai pu y développer :</p>
+                <ul>
+                    <li>Mon <strong>autonomie</strong> face à une base de code existante conséquente et complexe.</li>
+                    <li>Une grande <strong>rigueur et méthode</strong> dans le développement, le respect des protocoles automobiles stricts, et la rédaction de documentation logicielle (Doxygen).</li>
+                    <li>Ma maîtrise des outils professionnels de versioning (Git / GitKraken).</li>
+                </ul>
+            </div>
+            
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+            </div>
+
+            <div class="mt-8">
+                <a href="../index.html" class="btn btn-secondary">? Retour aux stages</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

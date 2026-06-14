@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAP4350 - Projet Capelec - Faustin Larose</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../../projets/index.html" class="nav-link active">Projets</a>
+                <a href="../../../stages/index.html" class="nav-link">Stages</a>
+                <a href="../../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème"></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">BUT3 · Logiciel · Embarqué</p>
+                <h1 class="mb-4">CAP4350 (Capelec)</h1>
+                <div class="tags">
+                    <span class="tag">Concevoir</span>
+                    <span class="tag">Implanter</span>
+                    <span class="tag">Maintenir</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <p>Développement actif du logiciel CAP4350, une application desktop en Qt 5.15.2 / C++ permettant de gérer la communication de diagnostic OBD-II entre un PC et un véhicule via bus CAN. Un produit vendu à près de 10 000 unités par an.</p>
+                
+                <!-- TODO: Add photo of the CAP4350 box -->
+                <div class="mt-8 mb-8 text-center">
+                    <img src="../../../assets/images/cap4350/boitier.jpg" alt="Boîtier CAP4350" class="card" style="padding: 0; overflow: hidden; margin: 0 auto;" onerror="this.style.display='none'">
+                    <!-- TODO: Replace the text below with a real caption when the photo is added -->
+                    <p class="text-secondary small mt-2"><em>Photo du boîtier CAP4350 (à insérer)</em></p>
+                </div>
+
+                <h3>Objectifs et Réalisations Techniques</h3>
+                <ul>
+                    <li><strong>Implémentation de protocoles :</strong> SAE J1979 (modes OBD-II 1 à 9), UDS ISO 14229 (parsing SID 0x59, détection automatique de session UDS, timer TesterPresent <code>3E 80</code> toutes les 2 secondes), et WWH-OBD ISO 27145.</li>
+                    <li><strong>Refonte de l'interface :</strong> Migration d'un affichage plat (<code>QTextEdit</code>) vers un arbre structuré (<code>QTreeWidget</code>) avec la création d'une classe dédiée <code>AffichageArbre</code> et d'une structure <code>ReponseOBD</code>.</li>
+                    <li><strong>Gestion avancée du réseau CAN :</strong> Parsing des trames CAN multi-frames et gestion multi-ECU via <code>QMap</code>.</li>
+                    <li><strong>Fonctionnalités avancées :</strong> Commande libre avec checksum XOR, complétion PID (<code>QLineEdit</code> + <code>QCompleter</code>), export CSV (modes 1/9/3) et export TXT à la fermeture.</li>
+                    <li><strong>Qualité logicielle :</strong> Rédaction d'une documentation Doxygen complète sur 8 fichiers sources et gestion rigoureuse des versions via Git / GitKraken.</li>
+                </ul>
+
+                <h3>Ressources et Architecture</h3>
+                <p><em>Note : Le code source de cette application propriétaire n'est pas public.</em></p>
+                
+                <!-- TODO: Add Architecture diagram -->
+                <p class="text-secondary small mt-4"><em><!-- TODO: Insérer ici le diagramme d'architecture logicielle (classes principales, flux de communication CAN -> parsing -> affichage) --></em></p>
+                
+                <!-- TODO: Add Cahier des charges link or extract -->
+                <p class="text-secondary small"><em><!-- TODO: Ajouter un lien ou un extrait de la version publique du cahier des charges --></em></p>
+
+                <h3 class="mt-8">Technologies Utilisées</h3>
+                <div class="tags mt-4">
+                    <span class="tag">Qt 5.15.2</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">CAN Bus</span>
+                    <span class="tag">OBD-II (SAE J1979)</span>
+                    <span class="tag">UDS (ISO 14229)</span>
+                    <span class="tag">WWH-OBD</span>
+                    <span class="tag">CANalyser3</span>
+                    <span class="tag">Git / Doxygen</span>
+                </div>
+            </div>
+            
+            <div class="pcb-line reveal"><div class="pcb-line-trace"></div><div class="pcb-dot pcb-dot-1"></div></div>
+
+            <div class="mt-8"><a href="../../../projets/index.html" class="btn btn-secondary">? Retour aux projets</a></div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; <span id="current-year"></span> Faustin Larose.</p></div></footer>
+    <script src="../../../scripts/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

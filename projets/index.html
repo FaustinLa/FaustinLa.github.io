@@ -1,70 +1,836 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projets – Portfolio</title>
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Faustin Larose</title>
+    <meta name="description" content="Découvrez tous les projets techniques réalisés par Faustin Larose (BUT GEII, projets personnels).">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="card">
-      <h1>Projets</h1>
-      <p class="muted">Choisis une catégorie. Les projets sont classés par année (BUT1/BUT2/BUT3) + projets personnels.</p>
-      <div class="btn-row">
-        <a class="btn primary" href="/projets/but1/">BUT1</a>
-        <a class="btn primary" href="/projets/but2/">BUT2</a>
-        <a class="btn primary" href="/projets/but3/">BUT3</a>
-        <a class="btn" href="/projets/perso/">Perso</a>
-      </div>
-    </div>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link active">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
 
-    <div class="card">
-      <h2>Comment lire un projet ?</h2>
-      <p class="muted">
-        Chaque projet a une page détail : contexte, objectif, ce que j’ai fait, résultats (photos/schémas), compétences.
-      </p>
-    </div>
-  </main>
+    <main>
+        <div class="container">
+            
+            <section class="section reveal">
+                <h1>Mes Projets</h1>
+                <p>Voici l'ensemble de mes projets, réalisés dans le cadre de ma formation BUT GEII ou sur mon temps libre. Ils illustrent ma capacité à concevoir et implémenter des systèmes mêlant matériel et logiciel. Cliquez sur un projet pour afficher son détail en fenêtre modale.</p>
+                
+                <!-- FILTERS -->
+                <div class="filters mt-8">
+                    <button class="filter-btn active" data-filter="Tous">Tous</button>
+                    <button class="filter-btn" data-filter="BUT1">BUT1</button>
+                    <button class="filter-btn" data-filter="BUT2">BUT2</button>
+                    <button class="filter-btn" data-filter="BUT3">BUT3</button>
+                    <button class="filter-btn" data-filter="Perso">Perso</button>
+                    <button class="filter-btn" data-filter="Embarqué">Embarqué</button>
+                    <button class="filter-btn" data-filter="Logiciel">Logiciel</button>
+                    <button class="filter-btn" data-filter="Électronique">Électronique</button>
+                </div>
 
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+                <!-- PROJECTS GRID -->
+                <div class="grid grid-2">
+                    
+                    <!-- PROJET 1 : Suiveur de ligne -->
+                    <div class="card-link project-card" data-modal="modal-project-suiveur-de-ligne" data-tags="BUT1,Électronique,Embarqué">
+                        <article class="card">
+                            <h3 class="mb-2">Suiveur de ligne</h3>
+                            <p class="hero-subtitle mb-4">BUT1 · Électronique · Embarqué</p>
+                            <p>Robot autonome suivant une ligne au sol grâce à des capteurs infrarouges. Conception de la logique de traitement des capteurs, programmation en C, mise au point et validation.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">C</span>
+                                <span class="tag">IR</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 2 : Testeur de batterie -->
+                    <div class="card-link project-card" data-modal="modal-project-testeur-batterie" data-tags="BUT1,Électronique">
+                        <article class="card">
+                            <h3 class="mb-2">Testeur de batterie</h3>
+                            <p class="hero-subtitle mb-4">BUT1 · Électronique</p>
+                            <p>Maquette analogique permettant de mesurer l'état de charge d'une batterie. Réalisation du circuit, mesures à l'oscilloscope et au multimètre, rédaction du compte-rendu.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">Analogique</span>
+                                <span class="tag">Mesures</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 3 : Dé électronique (Nouveau BUT1) -->
+                    <div class="card-link project-card" data-modal="modal-project-de-electronique" data-tags="BUT1,Électronique">
+                        <article class="card">
+                            <h3 class="mb-2">Dé électronique</h3>
+                            <p class="hero-subtitle mb-4">BUT1 · Électronique</p>
+                            <p>Analyse, dimensionnement et résolution méthodique de dysfonctionnements d'un dé électronique autonome à affichage 7 segments et logique séquentielle.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">Logique</span>
+                                <span class="tag">Dépannage</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 4 : Tracker de lumière (Nouveau BUT1) -->
+                    <div class="card-link project-card" data-modal="modal-project-tracker-de-lumiere" data-tags="BUT1,Électronique,Embarqué">
+                        <article class="card">
+                            <h3 class="mb-2">Tracker de lumière</h3>
+                            <p class="hero-subtitle mb-4">BUT1 · Électronique · Embarqué</p>
+                            <p>Conception en bureau d'étude d'un système d'asservissement d'un moteur pas à pas (MPAP) piloté par carte STM32 pour suivre une source lumineuse mobile.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">STM32</span>
+                                <span class="tag">Moteur</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 5 : Carte STM32 custom -->
+                    <div class="card-link project-card" data-modal="modal-project-carte-stm32" data-tags="BUT2,Électronique,Embarqué">
+                        <article class="card">
+                            <h3 class="mb-2">Carte STM32 custom</h3>
+                            <p class="hero-subtitle mb-4">BUT2 · Électronique · Embarqué</p>
+                            <p>Conception d'une carte électronique sur mesure intégrant un microcontrôleur STM32, réalisée sous KiCad : schématique, routage, fabrication, soudure CMS, validation fonctionnelle.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Implanter</span>
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">KiCad</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 6 : SAE IoT S6 -->
+                    <div class="card-link project-card" data-modal="modal-project-sae-iot" data-tags="BUT3,Embarqué,Logiciel">
+                        <article class="card">
+                            <h3 class="mb-2">SAE IoT S6</h3>
+                            <p class="hero-subtitle mb-4">BUT3 · Embarqué · Logiciel</p>
+                            <p>Système IoT complet à 4 composants. IHM Qt pour la configuration des nœuds. Gateway NRF→MQTT sur Nucleo-F439ZI sous FreeRTOS et lwIP. Serveur MQTT→BDD avec déchiffrement AES-128 CBC.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Implanter</span>
+                                <span class="tag">FreeRTOS</span>
+                                <span class="tag">MQTT</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 7 : CAP4350 · Capelec -->
+                    <div class="card-link project-card" data-modal="modal-project-cap4350" data-tags="BUT3,Logiciel,Embarqué">
+                        <article class="card">
+                            <h3 class="mb-2">CAP4350 · Capelec</h3>
+                            <p class="hero-subtitle mb-4">BUT3 · Logiciel · Embarqué</p>
+                            <p>Projet phare. Application desktop Qt 5 / C++ gérant la communication de diagnostic automobile OBD-II / UDS entre un PC et un véhicule via bus CAN.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Implanter</span>
+                                <span class="tag">Maintenir</span>
+                                <span class="tag">C++ / Qt5</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 8 : Montage PC custom -->
+                    <div class="card-link project-card" data-modal="modal-project-montage-pc" data-tags="Perso,Électronique">
+                        <article class="card">
+                            <h3 class="mb-2">Montage PC custom</h3>
+                            <p class="hero-subtitle mb-4">Perso · Électronique</p>
+                            <p>Construction d'un PC de A à Z : objectifs de performances, silence thermique, esthétique ARGB cohérente, justification des choix de composants et benchmarks.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Vérifier</span>
+                                <span class="tag">Hardware</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROJET 9 : Home Assistant -->
+                    <div class="card-link project-card" data-modal="modal-project-home-assistant" data-tags="Perso,Logiciel,Embarqué">
+                        <article class="card">
+                            <h3 class="mb-2">Home Assistant sur Dell Wyse</h3>
+                            <p class="hero-subtitle mb-4">Perso · Logiciel · Embarqué</p>
+                            <p>Serveur domotique construit sur un thin client Dell Wyse Dx0D récupéré, faisant tourner Home Assistant sous Debian/Docker pour centraliser la domotique à faible coût.</p>
+                            <div class="tags mt-auto pt-4">
+                                <span class="tag">Concevoir</span>
+                                <span class="tag">Implanter</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==========================================================================
+       DIALOGS / DIALOG MODALS SECTION
+       ========================================================================== -->
+
+    <!-- MODAL 1: Suiveur de ligne -->
+    <dialog id="modal-project-suiveur-de-ligne">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT1 · Électronique · Embarqué</p>
+            <h2 class="mb-2">Robot Suiveur de Ligne</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Vérifier</span>
+                <span class="tag">C</span>
+                <span class="tag">Infrarouge</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Châssis & Moteurs</span>
+                                <span>Intégration mécanique des deux moto-réducteurs latéraux</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Capteurs Infrarouges</span>
+                                <span>Étude de la logique de détection de la ligne blanche au sol</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Schéma d'Implantation</span>
+                                <span>Dossier technique de disposition des composants de traitement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Ce projet consiste à réaliser la commande analogique et l'asservissement d'un robot autonome capable de suivre une ligne blanche au sol (ruban adhésif de 19 mm de large) sur fond sombre. De type "char", le robot est doté de deux moto-réducteurs latéraux indépendants et de deux capteurs optiques infrarouges.</p>
+                
+                <h3>Objectifs & Cahier des charges</h3>
+                <ul>
+                    <li>Alimentation embarquée autonome de 12V.</li>
+                    <li>Format compact standardisé de 45 x 55 mm.</li>
+                    <li>Conception de la logique combinatoire de traitement des signaux optiques.</li>
+                    <li>Programmation en C de la logique d'asservissement de vitesse des moteurs en fonction des positions mesurées.</li>
+                </ul>
+
+                <h3>Réalisations et Résultats</h3>
+                <p>En ligne droite, la ligne n'est pas détectée et les moteurs tournent à pleine vitesse. Dès qu'un capteur détecte la ligne, la vitesse du moteur associé diminue pour opérer une rotation de réalignement. J'ai conçu la logique de comparaison des tensions analogiques issues des capteurs IR et codé l'asservissement, validé ensuite par des mesures dynamiques à l'oscilloscope (mesures de rapport cyclique PWM en fonction de la position du robot).</p>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li><strong>AC11.01 :</strong> Produire une analyse fonctionnelle d'un système (décomposition fonctionnelle en sous-fonctions et schéma-blocs).</li>
+                    <li><strong>AC11.02 :</strong> Réaliser un prototype matériel et logiciel (câblage sur plaque, soudure, programmation en langage C).</li>
+                    <li><strong>AC11.03 :</strong> Rédiger un dossier de fabrication à partir d'un dossier de conception (typon, schéma d'implantation et feuille de nomenclature).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: Testeur de batterie -->
+    <dialog id="modal-project-testeur-batterie">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT1 · Électronique</p>
+            <h2 class="mb-2">Testeur de Batterie Automobile</h2>
+            <div class="tags mb-4">
+                <span class="tag">Vérifier</span>
+                <span class="tag">Analogique</span>
+                <span class="tag">Mesures</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Câblage Analogique</span>
+                                <span>Prototype sur plaque d'essais rapide</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Tests Comparateurs</span>
+                                <span>Seuils de tension à AOP et signaux de sortie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Réalisation d'une maquette électronique analogique permettant de diagnostiquer l'état de charge d'une batterie de voiture (12V) via l'allume-cigare.</p>
+                
+                <h3>Principe et Fonctionnement</h3>
+                <p>Le système est découpé en 5 fonctions élémentaires et s'appuie sur des comparateurs de tension pour piloter trois LED de statut :</p>
+                <ul>
+                    <li><strong>LED Verte :</strong> Batterie correctement chargée.</li>
+                    <li><strong>LED Jaune :</strong> Charge en cours (tension alternateur correcte).</li>
+                    <li><strong>LED Rouge :</strong> Batterie déchargée ou sous-tension.</li>
+                </ul>
+
+                <h3>Mesures & Validation</h3>
+                <p>J'ai simulé et cablé chaque fonction sur plaque d'essais (breadboard), déterminé les valeurs des ponts diviseurs de tension théoriques, puis effectué les relevés de tension réels au multimètre et à l'oscilloscope. Les résultats expérimentaux ont confirmé des seuils de basculement très stables, permettant une détection précise de l'état de charge.</p>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li><strong>AC11.01 :</strong> Produire une analyse fonctionnelle du système (définition des entrées/sorties et décomposition en 5 blocs fonctionnels).</li>
+                    <li><strong>AC11.02 :</strong> Réaliser le prototype de la solution (tests individuels et validation globale sur plaque de câblage).</li>
+                    <li><strong>AC11.03 :</strong> Établir le dossier de fabrication (typon d'implantation, fiche de nomenclature et fiches de mesures).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: Dé électronique -->
+    <dialog id="modal-project-de-electronique">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT1 · Électronique</p>
+            <h2 class="mb-2">Dé Électronique (SAE 1.2)</h2>
+            <div class="tags mb-4">
+                <span class="tag">Vérifier</span>
+                <span class="tag">Logique</span>
+                <span class="tag">Dépannage</span>
+                <span class="tag">7-Segments</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Logique Séquentielle</span>
+                                <span>Signal d'horloge à trigger de Schmitt</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Compteur Modulo 6</span>
+                                <span>Vérification de la remise à zéro cyclique</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Décodage d'Affichage</span>
+                                <span>Logique combinatoire pour afficheur 7 segments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Ce projet visait à appliquer une démarche de diagnostic et de résolution méthodique de dysfonctionnements sur une maquette de dé électronique autonome.</p>
+                
+                <h3>Cahier des charges & Fonctionnalités</h3>
+                <ul>
+                    <li>Alimentation autonome par 3 piles de 1.5V.</li>
+                    <li>Génération aléatoire uniforme d'une valeur comprise entre 1 et 6.</li>
+                    <li>Affichage lisible sur afficheur 7 segments.</li>
+                    <li>Commande manuelle simplifiée (bouton-poussoir pour lancer l'affichage).</li>
+                </ul>
+
+                <h3>Démarche de Vérification et Diagnostic</h3>
+                <p>Pour assurer la fiabilité du circuit, nous avons segmenté la validation selon 5 blocs fonctionnels clés :</p>
+                <ol>
+                    <li><strong>Signal d'horloge :</strong> Relevé de la forme d'onde triangulaire générée par un montage à trigger de Schmitt (oscilloscope).</li>
+                    <li><strong>Compteur logique :</strong> Validation de la séquence de comptage binaire.</li>
+                    <li><strong>Comptage modulo 6 :</strong> Vérification de la transition automatique à l'état de départ après le chiffre 6.</li>
+                    <li><strong>Décodage de l'information :</strong> Analyse de la logique combinatoire de conversion binaire vers 7 segments.</li>
+                    <li><strong>Affichage final :</strong> Vérification du bon allumage des segments correspondants.</li>
+                </ol>
+                <p>Cette approche systématique m'a permis d'identifier rapidement les erreurs de dimensionnement des résistances d'alimentation des LED et d'affiner mes compétences en diagnostic matériel.</p>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li><strong>AC12.01 :</strong> Appliquer une procédure d'essai rigoureuse (dimensionnement préliminaire des parties du montage).</li>
+                    <li><strong>AC12.02 :</strong> Identifier un dysfonctionnement (méthode de validation pas-à-pas par bloc fonctionnel).</li>
+                    <li><strong>AC12.03 :</strong> Décrire les effets d'un dysfonctionnement (analyse et rédaction d'un rapport de validation avec fiches de mesures).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 4: Tracker de lumière -->
+    <dialog id="modal-project-tracker-de-lumiere">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT1 · Électronique · Embarqué</p>
+            <h2 class="mb-2">Tracker de Lumière (SAE 2.1)</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Vérifier</span>
+                <span class="tag">STM32</span>
+                <span class="tag">Moteur Pas à Pas</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Simulation Bureau d'Étude</span>
+                                <span>Maquette de simulation avec boutons de contrôle</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Contrôle du Moteur Pas à Pas</span>
+                                <span>Génération de signaux de commande STM32</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Schéma Fonctionnel</span>
+                                <span>Documentation des connexions capteurs et actionneur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Conçu sous forme de simulation de bureau d'étude pour un client, ce projet d'équipe visait à réaliser un système motorisé autonome capable d'orienter un capteur face à une source lumineuse ponctuelle (ex: faisceau d'une lampe torche).</p>
+                
+                <h3>Architecture Hardware & Commande</h3>
+                <ul>
+                    <li><strong>Actionneur :</strong> Moteur pas à pas (MPAP) assurant un positionnement angulaire précis.</li>
+                    <li><strong>Unité de contrôle :</strong> Microcontrôleur STM32 programmé pour traiter les données de luminosité et piloter les bobines du moteur.</li>
+                    <li><strong>Capteurs :</strong> Photorésistances montées en ponts diviseurs.</li>
+                </ul>
+
+                <h3>Méthodologie de développement</h3>
+                <p>Pour assurer la réussite du projet et éviter tout dommage sur le matériel final, nous avons séparé le travail en deux phases distinctes :</p>
+                <ul>
+                    <li><strong>Phase de simulation :</strong> Développement et test de la logique sur une carte d'essai. Les capteurs réels étaient modélisés par des potentiomètres et des boutons-poussoirs pour valider l'algorithme d'asservissement en toute sécurité.</li>
+                    <li><strong>Intégration finale :</strong> Transfert du code validé sur la plateforme réelle, liaison avec les ponts de mesure de lumière et le contrôleur de puissance du moteur pas à pas.</li>
+                </ul>
+                <p>Le projet s'est conclu par des revues de projet régulières et une démonstration réussie devant les enseignants, validant notre organisation d'équipe et notre rigueur méthodologique.</p>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li><strong>AC12.01 :</strong> Appliquer une procédure d'essai rigoureuse (schémas fonctionnels de test et validation par étape).</li>
+                    <li><strong>AC12.02 :</strong> Identifier un dysfonctionnement (séparation matérielle de la simulation et du tracker réel).</li>
+                    <li><strong>AC12.03 :</strong> Décrire les effets d'un dysfonctionnement (rédaction d'un rapport de revue de projet technique et d'avancement).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 5: Carte STM32 custom -->
+    <dialog id="modal-project-carte-stm32">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT2 · Électronique · Embarqué</p>
+            <h2 class="mb-2">Carte STM32 Custom</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Implanter</span>
+                <span class="tag">Vérifier</span>
+                <span class="tag">KiCad</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Schématique KiCad</span>
+                                <span>Conception du circuit logique et alimentation</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Routage PCB</span>
+                                <span>Tracé double couche et plan de masse haute fréquence</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Soudure CMS</span>
+                                <span>Assemblage et brasage à l'air chaud (LQFP & passifs)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Conception d'une carte électronique microcontrôleur sur mesure, depuis le schéma de principe jusqu'au routage et aux tests physiques.</p>
+                
+                <h3>Processus de conception (KiCad)</h3>
+                <ul>
+                    <li><strong>Schématique :</strong> Intégration d'un microcontrôleur STM32, de l'alimentation régulée, des circuits d'horloge (quartz externe) et des interfaces d'E/S.</li>
+                    <li><strong>Routage :</strong> Conception d'un PCB double couche en respectant l'adaptation d'impédance et la distribution des plans de masse pour le bruit haute fréquence.</li>
+                    <li><strong>Fabrication & Soudure :</strong> Assemblage des composants CMS (soudure à l'air chaud et au fer fin pour les boîtiers LQFP et résistances 0805).</li>
+                    <li><strong>Validation :</strong> Programmation d'un firmware de test (liaison série et clignotement de LED) pour vérifier le bon fonctionnement du microcontrôleur.</li>
+                </ul>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li>Conception avancée de schématique électronique industrielle.</li>
+                    <li>Maîtrise des techniques de routage double couche (CEM, plans de masse).</li>
+                    <li>Soudure de précision des microcomposants CMS (LQFP, 0805).</li>
+                    <li>Écriture de scripts de test bas niveau en langage C pour validation hardware.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 6: SAE IoT S6 -->
+    <dialog id="modal-project-sae-iot">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT3 · Embarqué · Logiciel</p>
+            <h2 class="mb-2">Système IoT Sécurisé S6</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Implanter</span>
+                <span class="tag">FreeRTOS</span>
+                <span class="tag">MQTT</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Architecture Multi-composants</span>
+                                <span>IHM configuration, Gateway et Serveur MQTT</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Programmation FreeRTOS</span>
+                                <span>Gestion des tâches de transmission RF et réseau</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Sécurité AES-128</span>
+                                <span>Chiffrement symétrique de bout en bout</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Développement collaboratif d'un système IoT complet et sécurisé reliant des nœuds capteurs à une base de données cloud via une passerelle embarquée.</p>
+                
+                <h3>Architecture du Système</h3>
+                <ol>
+                    <li><strong>IHM Qt :</strong> Interface desktop en C++/Qt5 permettant la configuration locale des nœuds (saisie de la clé secrète de chiffrement et ID du nœud via liaison série).</li>
+                    <li><strong>Passerelle (Gateway) :</strong> Microcontrôleur Nucleo-F439ZI gérant la réception sans fil NRF24L01+ et le transfert des trames sur le réseau Ethernet via MQTT sous FreeRTOS (liaison broker stable avec ajustement de timing de démarrage de la pile lwIP).</li>
+                    <li><strong>Base de données & Broker :</strong> Réception des paquets chiffrés sur un serveur MQTT, déchiffrement AES-128 CBC, et stockage en BDD.</li>
+                </ol>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li>Programmation d'un noyau temps réel multitâche (FreeRTOS) avec gestion d'IPC.</li>
+                    <li>Mise en œuvre d'une pile réseau IP (lwIP) et du protocole MQTT 3.1.1.</li>
+                    <li>Sécurisation cryptographique des réseaux embarqués (chiffrement symétrique AES-128).</li>
+                    <li>Création d'IHM série de configuration de nœuds matériels.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 7: CAP4350 · Capelec -->
+    <dialog id="modal-project-cap4350">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">BUT3 · Logiciel · Embarqué</p>
+            <h2 class="mb-2">CAP4350 · Outil de diagnostic automobile</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Implanter</span>
+                <span class="tag">Maintenir</span>
+                <span class="tag">C++ / Qt5</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Interface Qt 5</span>
+                                <span>Refonte de l'arbre de diagnostic QTreeWidget</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Communication CAN Bus</span>
+                                <span>Diagnostic OBD-II & UDS multi-calculateurs</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Documentation Doxygen</span>
+                                <span>Génération des fichiers d'architecture technique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Développement actif lors de mon stage BUT3 chez Capelec sur le logiciel de diagnostic antipollution automobile CAP4350. Un outil critique utilisé pour le contrôle technique des véhicules (10 000 unités vendues/an).</p>
+                
+                <h3>Développement & Intégrations Techniques</h3>
+                <ul>
+                    <li><strong>Protocoles de communication :</strong> Implémentation complète des protocoles OBD-II (SAE J1979) et UDS (ISO 14229) avec décodage des trames d'erreurs (DTC SID 0x59) et gestion de session TesterPresent (<code>3E 80</code> toutes les 2 secondes).</li>
+                    <li><strong>Refonte IHM :</strong> Refonte complète de la console d'affichage de texte brute (<code>QTextEdit</code>) vers une vue en arborescence interactive (<code>QTreeWidget</code> via la classe <code>AffichageArbre</code>).</li>
+                    <li><strong>Traitement CAN :</strong> Gestion du flux de données CAN multiframes et des réponses issues de plusieurs calculateurs (multi-ECU) par structures <code>QMap</code> associées.</li>
+                    <li><strong>Qualité :</strong> Rédaction de la documentation de code Doxygen et gestion de version sous Git/GitKraken.</li>
+                </ul>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li>Programmation orientée objet avancée en C++ avec le framework Qt 5.</li>
+                    <li>Analyse et parsing réseau de protocoles de communication multiplexés (CAN, K-Line).</li>
+                    <li>Méthodologie de développement sur base de code industrielle (intégration continue, Git, documentation Doxygen).</li>
+                    <li>Compréhension approfondie des standards internationaux automobiles OBD-II, UDS et WWH-OBD.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 8: Montage PC custom -->
+    <dialog id="modal-project-montage-pc">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">Perso · Électronique</p>
+            <h2 class="mb-2">Montage d'une Machine Informatique sur Mesure</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Vérifier</span>
+                <span class="tag">Hardware</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Câblage Structuré</span>
+                                <span>Optimisation physique et flux d'air interne</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Dissipation Thermique</span>
+                                <span>Optimisation des courbes de ventilation du CPU & GPU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Projet d'assemblage et d'optimisation d'un ordinateur hautes performances, mené avec une approche rigoureuse d'ingénierie thermique et d'intégration physique.</p>
+                
+                <h3>Objectifs & Contraintes</h3>
+                <ul>
+                    <li>Performances élevées et pérennité des choix matériels (CPU, GPU, RAM DDR5).</li>
+                    <li>Optimisation acoustique : Paramétrage de courbes de ventilation personnalisées (fan curves) dans le BIOS en fonction des capteurs de température.</li>
+                    <li>Gestion des flux d'air (pression positive dans le boîtier pour limiter la poussière).</li>
+                    <li>Câblage structuré (cable management) favorisant la circulation d'air et l'esthétique générale.</li>
+                </ul>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li>Gestion des flux d'air et de la dissipation thermique (dynamique des fluides appliquée).</li>
+                    <li>Régulation et paramétrage de contrôles bas niveau (profils UEFI, XMP/EXPO).</li>
+                    <li>Sélection de composants par rapport aux tolérances de tension et d'alimentation (TDP, Watts).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 9: Home Assistant -->
+    <dialog id="modal-project-home-assistant">
+        <button class="modal-close" aria-label="Fermer la fenêtre modale">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="modal-body">
+            <p class="hero-subtitle">Perso · Logiciel · Embarqué</p>
+            <h2 class="mb-2">Serveur Domotique Home Assistant</h2>
+            <div class="tags mb-4">
+                <span class="tag">Concevoir</span>
+                <span class="tag">Implanter</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Docker</span>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Linux headless</span>
+                                <span>Administration à distance du serveur Dell Wyse</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Conteneurs Docker</span>
+                                <span>Isolation des briques Home Assistant & MQTT</span>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-fallback">
+                                <span class="carousel-fallback-title">Réseau Zigbee</span>
+                                <span>Mise en oeuvre du réseau maillé local Zigbee2MQTT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Précédent">&larr;</button>
+                <button class="carousel-btn next" aria-label="Suivant">&rarr;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-indicator active"></span>
+                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator"></span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p>Déploiement d'une infrastructure domotique locale et sécurisée sur un client léger recyclé, optimisant la consommation énergétique (24h/24).</p>
+                
+                <h3>Spécifications Techniques</h3>
+                <ul>
+                    <li><strong>Matériel :</strong> Dell Wyse Dx0D (double cœur AMD, 8 Go de RAM, SSD SATA, refroidissement passif modifié avec ventilateurs silencieux USB).</li>
+                    <li><strong>OS :</strong> Debian Server headless (administration à distance via SSH).</li>
+                    <li><strong>Services :</strong> Conteneurisation des briques logicielles sous <strong>Docker</strong> (Home Assistant Core, Zigbee2MQTT, broker Eclipse Mosquitto, InfluxDB).</li>
+                    <li><strong>Intégrations :</strong> Automatisation de l'éclairage et relevé des sondes thermiques via réseau maillé Zigbee.</li>
+                </ul>
+
+                <h3 class="mt-6">Apprentissages critiques mobilisés</h3>
+                <ul class="learning-list">
+                    <li>Administration de systèmes d'exploitation Unix/Linux à distance.</li>
+                    <li>Conteneurisation et gestion de services isolés à l'aide de Docker.</li>
+                    <li>Configuration et protocole réseau domotique (MQTT, Zigbee).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </footer >
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

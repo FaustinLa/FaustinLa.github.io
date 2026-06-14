@@ -1,64 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>À propos – Portfolio</title>
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Faustin Larose</title>
+    <meta name="description" content="Présentation de Faustin Larose, étudiant en BUT3 GEII ESE.">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-  <script>
-  // 1) Mettre "active" sur le lien du menu correspondant à la page
-  (function(){
-    const path = location.pathname;
-    document.querySelectorAll('nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      // active si le chemin commence par le href (sauf "/")
-      if (href !== '/' && path.startsWith(href)) a.classList.add('active');
-      if (href === '/' && path === '/') a.classList.add('active');
-    });
-  })();
-
-  // 2) Animation d’apparition au scroll
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach(el => io.observe(el));
-  })();
-  </script>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="card">
-      <h1>À propos</h1>
-      <p class="muted">Quelques infos rapides : profil, parcours, objectifs.</p>
-    </div>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link active">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
 
-    <div class="card">
-      <h2>Profil</h2>
-      <p>Étudiant en DUT/BUT GEII, orienté électronique et systèmes embarqués.</p>
-      <p class="muted">Tu peux ajouter : ce que tu aimes (projets concrets, debug, mesures...), ton objectif.</p>
-    </div>
-  </main>
+    <main>
+        <div class="container">
+            <section class="section reveal">
+                <h1 class="mb-8">À propos</h1>
+                
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>Présentation</h2>
+                        <p>Étudiant en <strong>BUT3 GEII parcours ESE (Électronique et Systèmes Embarqués)</strong> à l'IUT de Montpellier, je suis également en double diplôme avec l'IAE Montpellier.</p>
+                        
+                        <p>Passionné d'électronique embarquée et de développement logiciel industriel depuis mes années lycée, ce qui me motive profondément, ce sont les projets complets où le matériel et le logiciel s'articulent, de la phase de conception matérielle initiale jusqu'à la validation logicielle sur le terrain.</p>
+                        
+                        <!-- TODO: Modify text below if needed -->
+                        <p class="text-secondary small"><em>Note académique : J'ai le plaisir d'être majorant en mathématiques au semestre S5.</em></p>
 
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+                        <h2 class="mt-8">Situation actuelle</h2>
+                        <p>Basé à Montpellier, je suis activement en recherche d'une <strong>école d'ingénieurs (Polytech ou équivalent)</strong> pour la poursuite de mes études l'année prochaine, afin d'approfondir mes compétences en systèmes embarqués et de devenir ingénieur de conception matérielle/logicielle.</p>
+
+                        <h2 class="mt-8">Centres d'intérêt</h2>
+                        <p>Au-delà de ma formation, je consacre mon temps libre à l'exploration technique :</p>
+                        <ul>
+                            <li><strong>Électronique & Domotique :</strong> Je conçois mes propres solutions (comme mon serveur Home Assistant et des capteurs IoT) pour automatiser mon logement et comprendre les systèmes distribués.</li>
+                            <li><strong>Hardware PC :</strong> Le montage, l'optimisation thermique et l'overclocking de machines sur mesure.</li>
+                            <!-- TODO: Feel free to elaborate on your Sim Racing setup -->
+                            <li><strong>Sim Racing :</strong> Grand amateur de pilotage virtuel (notamment sur Gran Turismo 7) avec une installation réaliste (volant et levier séquentiel, sans assists).</li>
+                        </ul>
+
+                        <div class="mt-8">
+                            <a href="../assets/cv/cv-faustin-larose.pdf" class="btn btn-primary" target="_blank" download="cv-faustin-larose.pdf">Télécharger mon CV (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image-container" style="align-self: flex-start;">
+                        <!-- TODO: Add your photo in assets/images/photo-profil.jpg -->
+                        <img src="../assets/images/photo-profil.jpg" alt="Faustin Larose" class="hero-image" onerror="this.src='https://placehold.co/400x400/1D4ED8/FFFFFF?text=FL'">
+                    </div>
+                </div>
+
+                <!-- BLOC CV INTEGRÉ -->
+                <div class="card reveal" style="padding: 40px; margin-top: 40px; margin-bottom: 40px;">
+                    <!-- EN-TÊTE PERSONNEL -->
+                    <div class="text-center" style="margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 32px;">
+                        <h2 style="font-size: var(--text-2xl); margin-bottom: 8px;">Faustin Larose</h2>
+                        <p class="hero-subtitle" style="margin-bottom: 16px;">Technicien supérieur en formation GEII</p>
+                        <div style="color: var(--text-secondary); font-size: var(--text-sm); display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; line-height: 1.8;">
+                            <span>📍 317 rue des croisades, 34280 La Grande-Motte</span>
+                            <span>📞 <a href="tel:0663395043">06 63 39 50 43</a></span>
+                            <span>✉️ <a href="mailto:faustin.larose@gmail.com">faustin.larose@gmail.com</a></span>
+                            <span>🎂 19 ans</span>
+                            <span>🐙 <a href="https://github.com/faustinla" target="_blank">GitHub</a></span>
+                            <span>💼 <a href="https://www.linkedin.com/in/faustin-larose/" target="_blank">LinkedIn</a></span>
+                        </div>
+                    </div>
+
+                    <!-- PROFIL -->
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent-color);">Profil</h3>
+                        <p>Étudiant en troisième année de génie électrique et informatique industrielle (BUT GEII), spécialité <strong>électronique et systèmes embarqués</strong> à l'IUT de Montpellier. Assidu, autonome et fiable. Mon objectif est de mettre mes compétences au profit d'une entreprise en stage pour compléter mon BUT.</p>
+                    </div>
+
+                    <!-- DIPLÔMES -->
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 24px; color: var(--accent-color);">Diplômes</h3>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">BUT Génie électrique et informatique industrielle</h4>
+                                <span class="text-secondary small">2023 – 2026</span>
+                            </div>
+                            <p class="text-secondary" style="margin-top: 4px; font-size: var(--text-sm);">Spécialité électronique et systèmes embarqués · IUT de Montpellier</p>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">Baccalauréat général</h4>
+                                <span class="text-secondary small">2023</span>
+                            </div>
+                            <p class="text-secondary" style="margin-top: 4px; font-size: var(--text-sm);">Mention assez bien et espagnole européenne · Spécialités : Mathématiques, Physique-Chimie · Lycée polyvalent Jean-François Champollion, Lattes</p>
+                        </div>
+                    </div>
+
+                    <!-- EXPÉRIENCES PROFESSIONNELLES -->
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 24px; color: var(--accent-color);">Expériences professionnelles</h3>
+                        
+                        <!-- EXP 0 (STAGE BUT3 CAPELEC) -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">Développement logiciel Qt/C++ (Stage BUT3) · Capelec</h4>
+                                <span class="text-secondary small">Janvier – Mai 2026</span>
+                            </div>
+                            <p class="text-secondary" style="margin: 2px 0 8px; font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;">Montpellier</p>
+                            <ul style="padding-left: 20px; font-size: var(--text-sm); margin: 0 0 8px 0; color: var(--text-secondary);">
+                                <li><b>Missions :</b> Développement applicatif en Qt 5 / C++ pour l'équipement de diagnostic automobile CAP4350. Implémentation des protocoles OBD-II (SAE J1979) et UDS (ISO 14229).</li>
+                                <li><b>Qualités requises/mobilisées :</b> Rigueur logicielle, autonomie face à une base de code complexe, respect des normes automobiles strictes.</li>
+                                <li><b>Ce que j'ai appris :</b> Architecture logicielle en C++, programmation événementielle (Qt), gestion de versioning (Git/GitKraken), et documentation technique (Doxygen).</li>
+                            </ul>
+                        </div>
+
+                        <!-- EXP 1 -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">Réceptionniste · Résidence le Birdie</h4>
+                                <span class="text-secondary small">Juillet – Août 2025</span>
+                            </div>
+                            <p class="text-secondary" style="margin: 2px 0 8px; font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;">Giez</p>
+                            <ul style="padding-left: 20px; font-size: var(--text-sm); margin: 0 0 8px 0; color: var(--text-secondary);">
+                                <li><b>Missions :</b> Accueillir les clients, saisir les réservations, diriger les équipes techniques et de ménages.</li>
+                                <li><b>Qualités requises/mobilisées :</b> Sens de l'organisation, communication relationnelle, leadership, gestion du stress.</li>
+                                <li><b>Ce que j'ai appris :</b> Gestion opérationnelle d'un site touristique, coordination inter-équipes logistique et technique.</li>
+                            </ul>
+                        </div>
+
+                        <!-- EXP 2 -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">Stage en entreprise · Sud Communication</h4>
+                                <span class="text-secondary small">Février – Avril 2025</span>
+                            </div>
+                            <p class="text-secondary" style="margin: 2px 0 8px; font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;">Mauguio</p>
+                            <ul style="padding-left: 20px; font-size: var(--text-sm); margin: 0 0 8px 0; color: var(--text-secondary);">
+                                <li><b>Missions :</b> Installation d'appareils de communication, réparation en atelier.</li>
+                                <li><b>Qualités requises/mobilisées :</b> Rigueur technique, minutie, méthode de diagnostic.</li>
+                                <li><b>Ce que j'ai appris :</b> Manipulation de matériel de mesure radiofréquence (Surecom SW-102), réparation électronique CMS, intégration de systèmes en milieu exigeant (vedette SNSM).</li>
+                            </ul>
+                        </div>
+
+                        <!-- EXP 3 -->
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                                <h4 style="margin: 0; font-size: var(--text-base); font-weight: 600;">Réceptionniste · Résidence Mayflower</h4>
+                                <span class="text-secondary small">2023 – 2024</span>
+                            </div>
+                            <p class="text-secondary" style="margin: 2px 0 8px; font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;">Grau du Roi</p>
+                            <ul style="padding-left: 20px; font-size: var(--text-sm); margin: 0 0 8px 0; color: var(--text-secondary);">
+                                <li><b>Missions :</b> Accueillir les clients, saisir les réservations, diriger les équipes techniques et de ménages.</li>
+                                <li><b>Qualités requises/mobilisées :</b> Aisance relationnelle, adaptabilité, rigueur administrative.</li>
+                                <li><b>Ce que j'ai appris :</b> Autonomie dans l'accueil et la prise de décisions rapides face aux demandes clients.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- COMPÉTENCES DÉVELOPPÉES EN PROJET -->
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent-color);">Compétences développées en projet</h3>
+                        
+                        <ul style="padding-left: 20px; font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.8;">
+                            <li><b>Concevoir :</b> développer des solutions techniques (Projets : <i>Testeur de batterie</i>, <i>Câblage domestique</i>).</li>
+                            <li><b>Vérifier :</b> tester et valider le bon fonctionnement d'un système (Projet : <i>Dé électronique</i>).</li>
+                            <li><b>Maintenir :</b> assurer le bon fonctionnement d'un système en effectuant des diagnostics.</li>
+                            <li><b>Implanter :</b> installer, configurer et adapter des systèmes ou équipements techniques dans un environnement donné.</li>
+                            <li><b>Maîtrise de logiciels & outils :</b> Quartus, Qucks, Control expert, KiCad, Qt Creator, STM32CubeIDE, MQTT.</li>
+                        </ul>
+                    </div>
+
+                    <!-- LANGUES & INFORMATIONS COMPLÉMENTAIRES -->
+                    <div class="grid grid-2" style="gap: 32px;">
+                        <div>
+                            <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent-color);">Langues</h3>
+                            <ul class="text-secondary" style="padding-left: 20px; font-size: var(--text-sm); line-height: 1.8;">
+                                <li><b>Anglais :</b> Niveau B2</li>
+                                <li><b>Espagnol :</b> Niveau B2</li>
+                                <li><b>Orthographe :</b> Certification Projet Voltaire (score 80%)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent-color);">Informations complémentaires</h3>
+                            <ul class="text-secondary" style="padding-left: 20px; font-size: var(--text-sm); line-height: 1.8;">
+                                <li>Football en club (2-3 fois par semaine)</li>
+                                <li>Arbitrage validé de niveau régional en Futsal</li>
+                                <li>Phase finale du championnat de France de Futsal 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
-

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testeur de batterie - Projet BUT1 - Faustin Larose</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../../../projets/index.html" class="nav-link active">Projets</a>
+                <a href="../../../stages/index.html" class="nav-link">Stages</a>
+                <a href="../../../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../../../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../../../cv/index.html" class="nav-link">CV</a>
+                <a href="../../../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème"></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="max-width: 800px;">
+            <div class="detail-header reveal">
+                <p class="hero-subtitle">BUT1 · Électronique</p>
+                <h1 class="mb-4">Testeur de batterie</h1>
+                <div class="tags">
+                    <span class="tag">Vérifier</span>
+                    <span class="tag">Analogique</span>
+                    <span class="tag">Mesures</span>
+                </div>
+            </div>
+
+            <div class="detail-content reveal">
+                <p>Réalisation d'une maquette analogique permettant de mesurer l'état de charge d'une batterie.</p>
+                
+                <h3>Réalisations</h3>
+                <ul>
+                    <li>Conception et montage du circuit électronique sur plaque d'essais.</li>
+                    <li>Prise de mesures à l'oscilloscope et au multimètre pour vérifier les niveaux de tension.</li>
+                    <li>Analyse des résultats et rédaction du compte-rendu technique.</li>
+                </ul>
+
+                <!-- TODO: Add schema or photo of the test circuit -->
+                <p class="text-secondary small mt-8"><em><!-- TODO: Ajouter schéma ou photo de la maquette --></em></p>
+            </div>
+            
+            <div class="pcb-line reveal"><div class="pcb-line-trace"></div><div class="pcb-dot pcb-dot-1"></div></div>
+
+            <div class="mt-8"><a href="../../../projets/index.html" class="btn btn-secondary">? Retour aux projets</a></div>
+        </div>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; <span id="current-year"></span> Faustin Larose.</p></div></footer>
+    <script src="../../../scripts/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
