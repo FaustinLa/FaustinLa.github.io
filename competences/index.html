@@ -1,227 +1,314 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Compétences – Portfolio</title>
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Faustin Larose</title>
+    <meta name="description" content="Compétences du référentiel GEII (Concevoir, Vérifier, Maintenir, Implanter) et compétences techniques transversales.">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-      <nav>
-        <a href="/projets/">Projets</a>
-        <a href="/stages/">Stages</a>
-        <a href="/competences/">Compétences</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <div class="stack">
-      <div class="card">
-        <h1>Compétences GEII (parcours ESE)</h1>
-        <p class="muted">
-          Cette page reprend les 4 compétences du référentiel. Clique sur une compétence pour afficher le détail.
-          Ensuite, je peux faire le lien avec mes projets (preuves : schémas, code, mesures, photos).
-        </p>
-      </div>
-
-      <!-- 1) CONCEVOIR -->
-      <details class="card">
-        <summary>
-          <span>Concevoir – Concevoir la partie GEII d’un système</span>
-          <span class="chev"></span>
-        </summary>
-        <div class="content">
-          <p>
-            Concevoir, c’est partir d’un besoin (cahier des charges), proposer une solution technique cohérente
-            (architecture matériel/logiciel), et produire les documents nécessaires (dossier de conception / fabrication).
-          </p>
-
-          <h3 style="margin-top:14px;">Situations professionnelles (exemples)</h3>
-          <ul>
-            <li>Conseiller un client à partir d’un cahier des charges (étude de faisabilité)</li>
-            <li>Chiffrer la réalisation d’un prototype ou d’un système industriel</li>
-            <li>Concevoir un prototype / sous-système à partir d’un cahier des charges partiel</li>
-          </ul>
-
-          <h3 style="margin-top:14px;">Apprentissages critiques</h3>
-          <p class="small"><b>BUT1 –</b> Mener une conception partielle intégrant une démarche projet</p>
-          <ul>
-            <li><b>AC11.01</b> – Produire une analyse fonctionnelle d’un système simple</li>
-            <li><b>AC11.02</b> – Réaliser un prototype pour des solutions techniques matériel et/ou logiciel</li>
-            <li><b>AC11.03</b> – Rédiger un dossier de fabrication à partir d’un dossier de conception</li>
-          </ul>
-
-          <p class="small"><b>BUT2 –</b> Concevoir un système en fiabilisant les solutions proposées</p>
-          <ul>
-            <li><b>AC21.01</b> – Proposer des solutions techniques liées à l’analyse fonctionnelle</li>
-            <li><b>AC21.02</b> – Dérisquer les solutions techniques retenues</li>
-          </ul>
-
-          <p class="small"><b>BUT3 –</b> Concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
-          <ul>
-            <li><b>AC31.01</b> – Contribuer à la rédaction d’un cahier des charges</li>
-            <li><b>AC31.02</b> – Prouver la pertinence de ses choix technologiques</li>
-            <li><b>AC31.03</b> – Rédiger un dossier de conception</li>
-          </ul>
-
-          <p class="muted small" style="margin-top:12px;">
-            👉 Quand je présente un projet, je peux lier ici : analyse fonctionnelle, choix composants, architecture, dossier, etc.
-          </p>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link active">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
         </div>
-      </details>
+    </header>
 
-      <!-- 2) VÉRIFIER -->
-      <details class="card">
-        <summary>
-          <span>Vérifier – Vérifier la partie GEII d’un système</span>
-          <span class="chev"></span>
-        </summary>
-        <div class="content">
-          <p>
-            Vérifier, c’est construire une démarche de tests et de mesures (plan d’essais),
-            identifier les dysfonctionnements, puis valider/certifier le fonctionnement d’un système.
-            On cherche une analyse qualitative et corrective, en tenant compte des contraintes (matérielles, contextuelles, réglementaires).
-          </p>
+    <main>
+        <div class="container">
+            <section class="section reveal">
+                <h1 class="mb-4">Compétences GEII (parcours ESE)</h1>
+                <p>Cette page détaille les 4 compétences du référentiel GEII (Électronique et Systèmes Embarqués) acquises durant mon cursus BUT. Cliquez sur une compétence pour afficher ses apprentissages critiques, situations professionnelles, et preuves associées.</p>
+                
+                <div class="mt-8" style="display: flex; flex-direction: column; gap: 24px;">
+                    
+                    <!-- 1) CONCEVOIR -->
+                    <details class="card">
+                        <summary>
+                            <span>Concevoir – Concevoir la partie GEII d’un système</span>
+                            <span class="chev"></span>
+                        </summary>
+                        <div class="content">
+                            <p>Concevoir, c’est partir d’un besoin (cahier des charges), proposer une solution technique cohérente (architecture matériel/logiciel), et produire les documents nécessaires (dossier de conception / fabrication).</p>
+                            
+                            <h3>Situations professionnelles</h3>
+                            <ul>
+                                <li>Conseiller un client à partir d’un cahier des charges (étude de faisabilité)</li>
+                                <li>Chiffrer la réalisation d’un prototype ou d’un système industriel</li>
+                                <li>Concevoir un prototype / sous-système à partir d’un cahier des charges partiel</li>
+                            </ul>
 
-          <h3 style="margin-top:14px;">Situations professionnelles (exemples)</h3>
-          <ul>
-            <li>Mettre en place un protocole de tests et mesures dans des systèmes embarqués</li>
-            <li>Mettre en place un protocole de tests dans un process industriel</li>
-            <li>Mettre en place un protocole de tests en gestion/production d’énergie</li>
-          </ul>
+                            <h3>Apprentissages critiques</h3>
+                            <p class="small"><b>BUT1 –</b> Mener une conception partielle intégrant une démarche projet</p>
+                            <ul>
+                                <li><b>AC11.01</b> – Produire une analyse fonctionnelle d’un système simple</li>
+                                <li><b>AC11.02</b> – Réaliser un prototype pour des solutions techniques matériel et/ou logiciel</li>
+                                <li><b>AC11.03</b> – Rédiger un dossier de fabrication à partir d’un dossier de conception</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT2 –</b> Concevoir un système en fiabilisant les solutions proposées</p>
+                            <ul>
+                                <li><b>AC21.01</b> – Proposer des solutions techniques liées à l’analyse fonctionnelle</li>
+                                <li><b>AC21.02</b> – Dérisquer les solutions techniques retenues</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT3 –</b> Concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                            <ul>
+                                <li><b>AC31.01</b> – Contribuer à la rédaction d’un cahier des charges</li>
+                                <li><b>AC31.02</b> – Prouver la pertinence de ses choix technologiques</li>
+                                <li><b>AC31.03</b> – Rédiger un dossier de conception</li>
+                            </ul>
 
-          <h3 style="margin-top:14px;">Apprentissages critiques</h3>
-          <p class="small"><b>BUT1 –</b> Effectuer les tests et mesures nécessaires</p>
-          <ul>
-            <li><b>AC12.01</b> – Appliquer une procédure d’essais</li>
-            <li><b>AC12.02</b> – Identifier un dysfonctionnement</li>
-            <li><b>AC12.03</b> – Décrire un dysfonctionnement</li>
-          </ul>
+                            <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+                                <p class="small" style="color: var(--accent-color); font-weight: 600; margin-bottom: 8px;">Preuves associées</p>
+                                <div class="tags" style="margin-top: 0;">
+                                    <a href="../projets/but2/carte-stm32/index.html" class="tag">Carte STM32</a>
+                                    <a href="../projets/but3/sae-iot/index.html" class="tag">SAE IoT S6</a>
+                                    <a href="../projets/but3/cap4350/index.html" class="tag">CAP4350</a>
+                                    <a href="../projets/perso/montage-pc/index.html" class="tag">Montage PC</a>
+                                    <a href="../stages/index.html" class="tag">Sud Communication</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
 
-          <p class="small"><b>BUT2 –</b> Mettre en place un protocole de tests</p>
-          <ul>
-            <li><b>AC22.01</b> – Identifier les tests/mesures pour valider un système</li>
-            <li><b>AC22.02</b> – Certifier le fonctionnement d’un nouvel équipement industriel</li>
-          </ul>
+                    <!-- 2) VÉRIFIER -->
+                    <details class="card">
+                        <summary>
+                            <span>Vérifier – Vérifier la partie GEII d’un système</span>
+                            <span class="chev"></span>
+                        </summary>
+                        <div class="content">
+                            <p>Vérifier, c’est construire une démarche de tests et de mesures (plan d’essais), identifier les dysfonctionnements, puis valider/certifier le fonctionnement d’un système en tenant compte des contraintes matérielles, réglementaires ou contextuelles.</p>
+                            
+                            <h3>Situations professionnelles</h3>
+                            <ul>
+                                <li>Mettre en place un protocole de tests et mesures dans des systèmes embarqués</li>
+                                <li>Mettre en place un protocole de tests dans un process industriel</li>
+                                <li>Mettre en place un protocole de tests en gestion/production d’énergie</li>
+                            </ul>
 
-          <p class="small"><b>BUT3 –</b> Élaborer une procédure qualité pour valider la conformité</p>
-          <ul>
-            <li><b>AC32.01</b> – Évaluer la cause racine d’un dysfonctionnement</li>
-            <li><b>AC32.02</b> – Proposer une solution corrective</li>
-            <li><b>AC32.03</b> – Produire une procédure d’essais pour valider la conformité</li>
-          </ul>
+                            <h3>Apprentissages critiques</h3>
+                            <p class="small"><b>BUT1 –</b> Effectuer les tests et mesures nécessaires</p>
+                            <ul>
+                                <li><b>AC12.01</b> – Appliquer une procédure d’essais</li>
+                                <li><b>AC12.02</b> – Identifier un dysfonctionnement</li>
+                                <li><b>AC12.03</b> – Décrire un dysfonctionnement</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT2 –</b> Mettre en place un protocole de tests</p>
+                            <ul>
+                                <li><b>AC22.01</b> – Identifier les tests/mesures pour valider un système</li>
+                                <li><b>AC22.02</b> – Certifier le fonctionnement d’un nouvel équipement industriel</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT3 –</b> Élaborer une procédure qualité pour valider la conformité</p>
+                            <ul>
+                                <li><b>AC32.01</b> – Évaluer la cause racine d’un dysfonctionnement</li>
+                                <li><b>AC32.02</b> – Proposer une solution corrective</li>
+                                <li><b>AC32.03</b> – Produire une procédure d’essais pour valider la conformité</li>
+                            </ul>
 
-          <p class="muted small" style="margin-top:12px;">
-            👉 Preuves typiques : capture oscillo, mesures, procédure de test, logs, validation fonctionnelle.
-          </p>
+                            <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+                                <p class="small" style="color: var(--accent-color); font-weight: 600; margin-bottom: 8px;">Preuves associées</p>
+                                <div class="tags" style="margin-top: 0;">
+                                    <a href="../projets/but1/suiveur-de-ligne/index.html" class="tag">Suiveur de ligne</a>
+                                    <a href="../projets/but1/testeur-batterie/index.html" class="tag">Testeur batterie</a>
+                                    <a href="../projets/but2/carte-stm32/index.html" class="tag">Carte STM32</a>
+                                    <a href="../projets/perso/montage-pc/index.html" class="tag">Montage PC</a>
+                                    <a href="../stages/index.html" class="tag">Sud Communication</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 3) MAINTENIR -->
+                    <details class="card">
+                        <summary>
+                            <span>Maintenir – Assurer le maintien en condition opérationnelle d’un système</span>
+                            <span class="chev"></span>
+                        </summary>
+                        <div class="content">
+                            <p>Maintenir, c’est intervenir sur un système pour l’entretenir, diagnostiquer une panne, corriger/fiabiliser, et proposer une démarche de maintenance (corrective, préventive, améliorative) en s’appuyant sur des procédures et la traçabilité.</p>
+                            
+                            <h3>Situations professionnelles</h3>
+                            <ul>
+                                <li>Maintenance corrective, préventive et améliorative dans des systèmes embarqués</li>
+                                <li>Maintenance sur process industriels</li>
+                                <li>Maintenance en gestion/production/maîtrise de l’énergie</li>
+                            </ul>
+
+                            <h3>Apprentissages critiques</h3>
+                            <p class="small"><b>BUT2 –</b> Intervenir sur un système pour effectuer une opération de maintenance</p>
+                            <ul>
+                                <li><b>AC23.01</b> – Exécuter l’entretien et le contrôle en respectant une procédure</li>
+                                <li><b>AC23.02</b> – Exécuter une maintenance (corrective, préventive, améliorative)</li>
+                                <li><b>AC23.03</b> – Diagnostiquer un dysfonctionnement</li>
+                                <li><b>AC23.04</b> – Identifier la cause racine du dysfonctionnement</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT3 –</b> Mettre en place une stratégie de maintenance</p>
+                            <ul>
+                                <li><b>AC33.01</b> – Proposer une solution de maintenance</li>
+                                <li><b>AC33.02</b> – Évaluer les coûts d’indisponibilité et de maintenance</li>
+                                <li><b>AC33.03</b> – Produire une procédure de maintenance</li>
+                                <li><b>AC33.04</b> – Proposer un appui technique aux acteurs (échelle nationale/internationale)</li>
+                            </ul>
+
+                            <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+                                <p class="small" style="color: var(--accent-color); font-weight: 600; margin-bottom: 8px;">Preuves associées</p>
+                                <div class="tags" style="margin-top: 0;">
+                                    <a href="../projets/but3/cap4350/index.html" class="tag">CAP4350</a>
+                                    <a href="../stages/index.html" class="tag">Sud Communication</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 4) IMPLANTER -->
+                    <details class="card">
+                        <summary>
+                            <span>Implanter – Implanter un système matériel ou logiciel</span>
+                            <span class="chev"></span>
+                        </summary>
+                        <div class="content">
+                            <p>Implanter, c’est intégrer une solution matérielle/logicielle dans un système, garantir un livrable conforme au dossier de conception/fabrication, et accompagner la mise en service dans une démarche qualité.</p>
+                            
+                            <h3>Situations professionnelles</h3>
+                            <ul>
+                                <li>Homologation d’un protocole de réalisation pour un nouvel équipement industriel</li>
+                                <li>Intervention chez un client pour mise en place d’un système</li>
+                                <li>Implantation d’une solution matérielle ou logicielle dans un système</li>
+                            </ul>
+
+                            <h3>Apprentissages critiques</h3>
+                            <p class="small"><b>BUT2 (ESE) –</b> Réaliser un système avec une démarche qualité</p>
+                            <ul>
+                                <li><b>AC24.01ESE</b> – Appliquer une procédure de fabrication pour implanter des composants matériels/logiciels</li>
+                                <li><b>AC24.02ESE</b> – Évaluer la conformité du système</li>
+                            </ul>
+                            <p class="small" style="margin-top: 12px;"><b>BUT3 (ESE) –</b> Installation / mise en service / conformité (démarche qualité)</p>
+                            <ul>
+                                <li><b>AC34.01ESE</b> – Produire une procédure d’installation et de mise en service</li>
+                                <li><b>AC34.02ESE</b> – Exécuter la mise en service en respectant la procédure</li>
+                                <li><b>AC34.03ESE</b> – Produire le dossier de conformité en gérant le versionnage</li>
+                            </ul>
+
+                            <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+                                <p class="small" style="color: var(--accent-color); font-weight: 600; margin-bottom: 8px;">Preuves associées</p>
+                                <div class="tags" style="margin-top: 0;">
+                                    <a href="../projets/but2/carte-stm32/index.html" class="tag">Carte STM32</a>
+                                    <a href="../projets/but3/sae-iot/index.html" class="tag">SAE IoT S6</a>
+                                    <a href="../projets/but3/cap4350/index.html" class="tag">CAP4350</a>
+                                    <a href="../projets/perso/home-assistant/index.html" class="tag">Home Assistant</a>
+                                    <a href="../stages/index.html" class="tag">Sud Communication</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- SIGNATURE PCB LINE -->
+            <div class="pcb-line reveal">
+                <div class="pcb-line-trace"></div>
+                <div class="pcb-dot pcb-dot-1"></div>
+                <div class="pcb-dot pcb-dot-3"></div>
+            </div>
+
+            <!-- COMPÉTENCES TECHNIQUES TRANSVERSALES -->
+            <section class="section reveal">
+                <h2 class="mb-4">Compétences techniques transversales</h2>
+                <div class="card">
+                    <div style="margin-bottom: 24px;">
+                        <h3 class="hero-subtitle mb-2">Langages</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">C</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML/CSS/JS</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h3 class="hero-subtitle mb-2">Frameworks & Libs</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">Qt 5</span>
+                            <span class="tag">FreeRTOS</span>
+                            <span class="tag">lwIP</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h3 class="hero-subtitle mb-2">Protocoles</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">CAN</span>
+                            <span class="tag">OBD-II (J1979)</span>
+                            <span class="tag">UDS (ISO 14229)</span>
+                            <span class="tag">WWH-OBD (ISO 27145)</span>
+                            <span class="tag">UART</span>
+                            <span class="tag">I2C</span>
+                            <span class="tag">SPI</span>
+                            <span class="tag">MQTT</span>
+                            <span class="tag">AES-128 CBC</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h3 class="hero-subtitle mb-2">Outils</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">KiCad</span>
+                            <span class="tag">STM32CubeIDE</span>
+                            <span class="tag">Git / GitKraken</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Doxygen</span>
+                            <span class="tag">draw.io</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h3 class="hero-subtitle mb-2">Matériel</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">STM32</span>
+                            <span class="tag">NRF24L01</span>
+                            <span class="tag">Oscilloscope</span>
+                            <span class="tag">Multimètre</span>
+                            <span class="tag">Analyseur CAN</span>
+                            <span class="tag">Surecom SW-102</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="hero-subtitle mb-2">Langues</h3>
+                        <div class="tags" style="margin-top: 0;">
+                            <span class="tag">Français (natif)</span>
+                            <span class="tag">Espagnol (B2)</span>
+                            <span class="tag">Anglais (B1+)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-      </details>
+    </main>
 
-      <!-- 3) MAINTENIR -->
-      <details class="card">
-        <summary>
-          <span>Maintenir – Assurer le maintien en condition opérationnelle d’un système</span>
-          <span class="chev"></span>
-        </summary>
-        <div class="content">
-          <p>
-            Maintenir, c’est intervenir sur un système pour l’entretenir, diagnostiquer une panne,
-            corriger/fiabiliser, et proposer une démarche de maintenance (corrective, préventive, améliorative).
-            On communique de façon proactive avec les acteurs et on s’appuie sur des procédures.
-          </p>
-
-          <h3 style="margin-top:14px;">Situations professionnelles (exemples)</h3>
-          <ul>
-            <li>Maintenance corrective, préventive et améliorative dans des systèmes embarqués</li>
-            <li>Maintenance sur process industriels</li>
-            <li>Maintenance en gestion/production/maîtrise de l’énergie</li>
-          </ul>
-
-          <h3 style="margin-top:14px;">Apprentissages critiques</h3>
-          <p class="small"><b>BUT2 –</b> Intervenir sur un système pour effectuer une opération de maintenance</p>
-          <ul>
-            <li><b>AC23.01</b> – Exécuter l’entretien et le contrôle en respectant une procédure</li>
-            <li><b>AC23.02</b> – Exécuter une maintenance (corrective, préventive, améliorative)</li>
-            <li><b>AC23.03</b> – Diagnostiquer un dysfonctionnement</li>
-            <li><b>AC23.04</b> – Identifier la cause racine du dysfonctionnement</li>
-          </ul>
-
-          <p class="small"><b>BUT3 –</b> Mettre en place une stratégie de maintenance</p>
-          <ul>
-            <li><b>AC33.01</b> – Proposer une solution de maintenance</li>
-            <li><b>AC33.02</b> – Évaluer les coûts d’indisponibilité et de maintenance</li>
-            <li><b>AC33.03</b> – Produire une procédure de maintenance</li>
-            <li><b>AC33.03</b> – Proposer un appui technique aux acteurs (échelle nationale/internationale)</li>
-          </ul>
-
-          <p class="muted small" style="margin-top:12px;">
-            👉 Preuves typiques : compte-rendu d’intervention, diagnostic, procédure, amélioration, traçabilité.
-          </p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
         </div>
-      </details>
+    </footer>
 
-      <!-- 4) IMPLANTER -->
-      <details class="card">
-        <summary>
-          <span>Implanter – Implanter un système matériel ou logiciel</span>
-          <span class="chev"></span>
-        </summary>
-        <div class="content">
-          <p>
-            Implanter, c’est intégrer une solution matérielle/logicielle dans un système,
-            garantir un livrable conforme au dossier de conception/fabrication et aux normes,
-            et accompagner la mise en service dans une démarche qualité.
-          </p>
-
-          <h3 style="margin-top:14px;">Situations professionnelles (exemples)</h3>
-          <ul>
-            <li>Homologation d’un protocole de réalisation pour un nouvel équipement industriel</li>
-            <li>Intervention chez un client pour mise en place d’un système</li>
-            <li>Implantation d’une solution matérielle ou logicielle dans un système</li>
-          </ul>
-
-          <h3 style="margin-top:14px;">Apprentissages critiques</h3>
-          <p class="small"><b>BUT2 (ESE) –</b> Réaliser un système avec une démarche qualité</p>
-          <ul>
-            <li><b>AC24.01ESE</b> – Appliquer une procédure de fabrication pour implanter des composants matériels/logiciels</li>
-            <li><b>AC24.02ESE</b> – Évaluer la conformité du système</li>
-          </ul>
-
-          <p class="small"><b>BUT3 (ESE) –</b> Installation / mise en service / conformité (démarche qualité)</p>
-          <ul>
-            <li><b>AC34.01ESE</b> – Produire une procédure d’installation et de mise en service</li>
-            <li><b>AC34.02ESE</b> – Exécuter la mise en service en respectant la procédure</li>
-            <li><b>AC34.03ESE</b> – Produire le dossier de conformité en gérant le versionnage</li>
-          </ul>
-
-          <p class="muted small" style="margin-top:12px;">
-            👉 Preuves typiques : procédure d’installation, check-list, dossier de conformité, versionnage, validation finale.
-          </p>
-        </div>
-      </details>
-
-      <div class="card">
-        <h2>Comment je fais le lien avec mes projets ?</h2>
-        <p class="muted">
-          Dans chaque page “détail projet”, j’ajoute un bloc “Compétences mobilisées” et je mets des liens
-          vers la compétence correspondante + une preuve (photo, schéma, code, mesure).
-        </p>
-        <div class="btn-row">
-          <a class="btn primary" href="/projets/">Aller aux projets</a>
-          <a class="btn" href="/stages/">Voir les stages</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>© <span id="y"></span> Faustin Larose</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

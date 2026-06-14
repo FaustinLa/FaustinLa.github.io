@@ -1,44 +1,67 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact – Portfolio</title>
-  <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Faustin Larose</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="/"><span class="dot"></span><span>Portfolio</span></a>
-    <nav>
-      <a href="/projets/">Projets</a>
-      <a href="/stages/">Stages</a>
-      <a href="/competences/">Compétences</a>
-      <a href="/a-propos/">À propos</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <div class="card">
-    <h1>Contact</h1>
-    <p class="muted">Remplace avec tes vrais liens.</p>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">FL</a>
+            <nav class="nav-links">
+                <a href="../projets/index.html" class="nav-link">Projets</a>
+                <a href="../stages/index.html" class="nav-link">Stages</a>
+                <a href="../competences/index.html" class="nav-link">Compétences</a>
+                <a href="../a-propos/index.html" class="nav-link">À propos</a>
+                <a href="../cv/index.html" class="nav-link">CV</a>
+                <a href="../contact/index.html" class="nav-link active">Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le thème">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
+    </header>
 
-    <div class="btn-row">
-      <a class="btn primary" href="mailto:ton.email@email.com">📧 Email</a>
-      <a class="btn" href="https://github.com/tonpseudo" target="_blank" rel="noreferrer">🐙 GitHub</a>
-      <!-- Optionnel -->
-      <!-- <a class="btn" href="https://www.linkedin.com/in/tonprofil/" target="_blank" rel="noreferrer">💼 LinkedIn</a> -->
-    </div>
+    <main>
+        <div class="container" style="max-width: 600px; text-align: center;">
+            <section class="section reveal">
+                <h1 class="mb-4">Contact</h1>
+                <p>N'hésitez pas à me contacter pour toute opportunité professionnelle ou question sur mes projets.</p>
+                
+                <div class="card mt-8">
+                    <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
+                        <!-- TODO: Replace with your actual email address -->
+                        <a href="mailto:votre.email@example.com" class="btn btn-primary" style="width: 100%; max-width: 300px;">
+                            Envoyer un email
+                        </a>
+                        
+                        <!-- TODO: Replace with your actual GitHub username -->
+                        <a href="https://github.com/faustinla" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; max-width: 300px;">
+                            Mon profil GitHub
+                        </a>
 
-    <p class="small" style="margin-top:10px;">
-      Si tu veux ajouter ton CV : mets <b>cv.pdf</b> dans <b>/assets/</b> et fais un lien vers <b>/assets/cv.pdf</b>.
-    </p>
-  </div>
-</main>
+                        <!-- TODO: Replace with your actual LinkedIn profile, or remove if you don't have one -->
+                        <a href="https://linkedin.com/in/votreprofil" target="_blank" rel="noreferrer" class="btn btn-secondary" style="width: 100%; max-width: 300px;">
+                            Mon profil LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-<footer>© <span id="y"></span> Faustin Larose</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Faustin Larose. Créé sans framework.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
