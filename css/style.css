@@ -813,7 +813,8 @@ dialog[open]::backdrop {
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: rgba(15, 15, 14, 0.95);
 }
 
 .carousel-fallback {
